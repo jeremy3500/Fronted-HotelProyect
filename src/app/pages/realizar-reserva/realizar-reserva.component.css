@@ -1,0 +1,202 @@
+.card-general {
+    justify-content: center;
+    display: flex;
+    min-height: 100dvh;
+}
+
+.card-container {
+    margin:auto;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    /* border: 2px solid rgb(255, 208, 0); */
+    /* border: solid 1px rgb(240, 240, 240); */
+    border-radius: 0px; 
+}
+
+.card-container2 {
+    margin:auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 20%;
+    min-height: 65vh;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 208, 0);
+    /* border: solid 1px rgb(240, 240, 240); */
+    border-radius: 20px; 
+}
+
+.cbo_Selects{
+    width: 30%;
+    margin-left: 50px;
+}
+
+.cbos{
+    display: inline;
+}
+
+.por_Hora{
+    margin: 20px 50px;
+}
+
+.column-layout {
+    display: flex;
+}
+
+/* Estilos para el botón */
+.button {
+    background-color: rgb(255, 255, 255); /* Fondo transparente */
+    color: rgb(43, 41, 41);; /* Color del texto */
+    border: 2px solid beige; /* Bordes blancos */
+    padding: 7px 14px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    border-color: rgb(223, 165, 90);
+    cursor: pointer; /* Cambia el cursor a puntero */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+/* Cambios en el botón al pasar el cursor */
+.button:hover {
+    background-color: rgb(223, 165, 90);
+    color: white /* Texto en color oscuro */
+}
+
+.button_2:hover {
+    background-color: rgb(223, 165, 90);
+    color: white /* Texto en color oscuro */
+}
+
+
+.container{
+    margin-bottom: 40px;
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    height: auto;;
+    gap: 30px;
+    /* justify-content: center; */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas */
+}
+
+/*##########################################################################*/
+
+.card-container_2 {
+    width: 60%;
+    margin: 0 15%;
+}
+
+.card {
+    opacity: 0;               /* Comienza invisible */
+    transform: translateY(20px); /* Empieza desplazada hacia abajo */
+    animation: fadeIn 0.5s ease-out forwards; /* Animación suave */
+
+    border: solid 1px rgb(124, 124, 124);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 25px;
+    padding: 15px 20px;
+    background-color: rgb(255, 255, 255);
+    min-height: 200px;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 120%;
+}
+.card:nth-child(1) {
+    animation-delay: 0.1s; /* Primera tarjeta: aparece después de 0.1s */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/*##########################################################################*/
+.cont_line_p{
+    display: flex;
+    justify-content: space-between; /* Coloca los elementos en los extremos */
+    width: 100%;
+}
+
+.divid{
+    display: inline-flex;
+    width: 100%;
+}
+
+img{
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+}
+
+.cont-inform{
+    width: 100%;
+}
+
+.cont_line_p p{
+    margin: 0px 20px 4px 20px;
+}
+.p_card{
+    margin-right: 10vh; 
+}
+
+
+.input-custom {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.button_2 {
+    background-color: rgb(255, 255, 255); /* Fondo transparente */
+    color: rgb(43, 41, 41);; /* Color del texto */
+    border: 2px solid beige; /* Bordes blancos */
+    padding: 7px 14px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    border-color: rgb(223, 165, 90);
+    cursor: pointer; /* Cambia el cursor a puntero */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 12%;
+    margin-top: 20px;
+}
+
+p{
+    font-size: 16px;
+}
+
+
+
+.button_habit {
+    background-color: rgb(255, 255, 255); /* Fondo transparente */
+    color: rgb(43, 41, 41);; /* Color del texto */
+    border: 2px solid beige; /* Bordes blancos */
+    padding: 7px 14px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    border-color: rgb(223, 165, 90);
+    cursor: pointer; /* Cambia el cursor a puntero */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 30%;
+    align-items: flex-end;
+}
+
+/* Cambios en el botón al pasar el cursor */
+.button_habit:hover {
+    background-color: rgb(223, 165, 90);
+    color: white /* Texto en color oscuro */
+}
+

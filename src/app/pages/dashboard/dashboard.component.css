@@ -1,0 +1,191 @@
+  
+  .content-general{
+    width: 97%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .inforide {
+    box-shadow: 1px 2px 8px 0px #c5c5c5;
+    background-color: white;
+    border-radius: 8px;
+    height: 100px;
+  }
+  
+  .rideone {
+    padding-top: 25px;
+    border-radius: 8px 0px 0px 8px;
+    text-align: center;
+    height: 100px;
+    margin-left: 12px;
+  }
+  
+  
+  .fontsty {
+    margin-right: -15px;
+  }
+  
+  .fontsty h2{
+    color: #6E6E6E;
+    font-size: 35px;
+    margin-top: 15px;
+    text-align: right;
+    margin-right: 30px;
+  }
+  
+  .fontsty h4{
+    color: #6E6E6E;
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 30px;
+  }
+  
+  .content-wrapper {
+    height: 100%;
+    /* padding-top: 1rem; */
+    padding-top: 20px;
+    overflow-x: hidden;
+    background: transparent;
+  }
+  
+  i{
+    font-size: 3rem;
+    color: white;
+  }
+
+  .inline{
+    display: flex;
+    margin-left: 50px;
+  }
+  .content{
+    background-color: white;
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid rgb(230, 230, 230);
+  }
+
+  .content-grafico{
+    padding-top: 15px;
+    height: 400px;
+    margin-top: 15px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 0px;
+    transition: all 0.3s ease-out;
+  }
+
+  h3{
+    margin-bottom: 0px;
+    transition: all 0.3s ease-out;
+    font-size: 18px;
+    width: 200px;
+  }
+  
+  .chart-container {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 240px; /* Altura total del gráfico */
+  }
+  
+  .bar-group {
+    display: flex;
+    flex-direction: row; /* Organiza las barras horizontalmente */
+    justify-content: space-between; /* Espacio igual entre las barras dentro del grupo */
+    gap: 5px; /* Espacio entre las barras dentro de cada grupo */
+    height: 100%; /* La altura debe ser 100% del contenedor del gráfico */
+    align-items: flex-end; /* Alinea las barras desde la parte inferior */
+  }
+  
+  
+  .bar {
+    width: 36px; /* Ancho de cada barra */
+    background-color: #8ea6ec; /* Color de la barra */
+    text-align: center;
+    color: white;
+    line-height: 30px; /* Centrado del texto dentro de la barra */
+    border-radius: 5px 5px 0 0; /* Bordes redondeados en la parte superior */
+    height: 0; /* Inicializamos la altura en 0 */
+    transition: height 1s ease-in-out; /* Animación para el cambio de altura */
+    opacity: 0; /* Inicialmente las barras son invisibles */
+    animation: showBar 1s forwards; /* Animación para la barra */
+    margin-bottom:px;
+    min-height: 10%;
+  }
+
+  .bar_2 {
+    width: 36px; /* Ancho de cada barra */
+    background-color: #64db7e; /* Color de la barra */
+    text-align: center;
+    color: white;
+    line-height: 30px; /* Centrado del texto dentro de la barra */
+    border-radius: 5px 5px 0 0; /* Bordes redondeados en la parte superior */
+    height: 0; /* Inicializamos la altura en 0 */
+    transition: height 1s ease-in-out; /* Animación para el cambio de altura */
+    opacity: 0; /* Inicialmente las barras son invisibles */
+    animation: showBar 1s forwards; /* Animación para la barra */
+    min-height: 10%;
+  }
+
+  .leyenda{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 5px 20px;
+  }
+  .cont-tile-grafic{
+    display: flex;
+  }
+
+  /* .bar:hover {
+    background-color: #dba800;
+  } */
+
+  /* Estilos para la línea debajo del gráfico */
+  .line {
+    height: 3px;
+    background-color: #474747;
+  }
+  
+  /* Estilos para las etiquetas debajo de las barras */
+  .labels {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .labels span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+
+  /* Animación para las barras */
+  @keyframes showBar {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      height: 100;
+      opacity: 1;
+    }
+  }
+
+  /* Retraso para las barras */
+  .bar:nth-child(1) {
+    animation-delay: 0.5s;
+  }
+

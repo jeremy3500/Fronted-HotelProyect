@@ -1,0 +1,38 @@
+/* Estilos para el contenedor de los enlaces */
+.nav-links {
+    display: flex; /* Para alinear los enlaces en una fila */
+    gap: 2px; /* Espacio entre los enlaces */
+    height: 100%;
+    align-items: center;
+}
+
+/* Estilos para los enlaces */
+.nav-links a {
+    color: rgb(255, 255, 255); /* Color blanco para el texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 18px; /* Tamaño de la fuente */
+    width: 50%;
+    text-align: center;
+    transition: color 0.3s ease; /* Transición suave para el hover */
+    height: 100%;
+    align-content: center;
+}
+
+.nav-links a:hover {
+    background-color: rgb(223, 165, 90);
+}
+
+.nav-head{
+    width: 100%;
+}
+
+.nav-content{
+    background-color: rgb(78, 78, 78);
+    height: 50px;
+    display: flex; /* Organiza el contenido con flexbox */
+    justify-content: center; /* Distribuye espacio entre las secciones */
+    width: 100%;
+}
+
+
+

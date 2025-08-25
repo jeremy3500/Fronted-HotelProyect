@@ -1,0 +1,81 @@
+/*######################## IMAGEN DE CABECERA ########################*/
+
+.image_body{
+     /* height: 100vh; */
+     height: 100vh;
+     min-height: 350px;
+     background: no-repeat center center scroll;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+ }
+ .image-container {
+     position: relative; /* Permite que el texto se posicione sobre la imagen */
+     background: no-repeat center center scroll;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+     height: 100vh; /* Ajusta según sea necesario */
+     overflow: hidden; /* Evita que el contenido se desborde */
+ }
+ 
+ .image {
+     width: 100%; /* Hace que la imagen ocupe todo el contenedor */
+     height: 100%; /* Hace que la imagen ocupe todo el contenedor */
+     object-fit: cover; /* Mantiene la relación de aspecto de la imagen */
+ }
+ 
+ .overlay {
+     position: absolute; /* Posiciona la capa oscura sobre la imagen */
+     top: 0; /* Alinea en la parte superior */
+     left: 0; /* Alinea a la izquierda */
+     right: 0; /* Alinea a la derecha */
+     bottom: 0; /* Alinea en la parte inferior */
+     background-color: rgba(0, 0, 0, 0.4); /* Fondo negro semi-transparente */
+ }
+ 
+ .sub-title {
+     position: absolute; /* Permite posicionar el texto sobre la imagen */
+     top: 50%; /* Posiciona verticalmente al medio */
+     left: 50%; /* Posiciona horizontalmente al medio */
+     transform: translate(-85%, -50%); /* Centra el texto */
+     color: white; /* Color del texto */
+     font-size: 32px; /* Tamaño de la fuente del texto */
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra del texto para mayor visibilidad */
+ }
+ 
+ /*######################## CONTENEDORES ########################*/
+ 
+ .container{
+     margin-bottom: 50px;
+     text-align: center;
+     margin-top: 40px;
+ }
+ 
+ .card-container {
+     display: flex;               /* Utiliza flexbox */
+     flex-wrap: wrap;            /* Permite que las tarjetas se envuelvan a la siguiente línea */
+     justify-content: center;     /* Centra las tarjetas horizontalmente */
+     margin: 0 auto;             /* Centra el contenedor */
+     margin-top: 40px;
+ }
+ 
+ .card {
+     display: flex;               /* Flexbox para centrar el contenido dentro de la tarjeta */
+     flex-direction: column;      /* Apila el contenido verticalmente */
+     justify-content: center;     /* Centra verticalmente */
+     text-align: center;          /* Alinea el texto al centro */
+     border-radius: 50px;         /* Bordes redondeados */
+     padding: 20px;               /* Espacio interno */
+     background-color: rgb(252, 252, 252); /* Color de fondo */
+     width: calc(30% - 20px);    /* Establece el ancho (3 tarjetas en una fila) y ajusta el margen */
+     height: 280px;
+     margin: 10px;               /* Espacio entre tarjetas */
+     box-sizing: border-box;      /* Incluye padding y bordes en el ancho total */
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+ }
+ .p_card{
+     margin-top: 0px;
+ }

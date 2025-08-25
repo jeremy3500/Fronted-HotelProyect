@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Busca una Reserva</h2>
+
+<mat-dialog-content class="contenedor">
+    <div class="columna-izquierda">
+        <h4 class="inf-tile">Nro de reserva: </h4>
+    </div>
+
+    <div class="columna-derecha">
+        <input pattern="[0-9]*" inputmode="numeric" maxlength="4" matInput [(ngModel)]="codigo"/>
+    </div>
+    
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="cont-buttons">
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button [mat-dialog-close]="codigo()" cdkFocusInitial>Buscar</button>
+</mat-dialog-actions>

@@ -1,0 +1,74 @@
+.card-container {
+    margin:auto;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+    /* border: solid 1px rgb(240, 240, 240); */
+    /* border-radius: 20px;  */
+    min-height: 100vh;
+}
+
+.container{
+    margin-bottom: 40px;
+}
+
+.card-container_2 {
+    display: flex;               /* Utiliza flexbox */
+    flex-wrap: wrap;            /* Permite que las tarjetas se envuelvan a la siguiente línea */
+    justify-content: center;     /* Centra las tarjetas horizontalmente */
+    margin: 0 auto;             /* Centra el contenedor */
+    /* margin-top: 10px; */
+}
+
+.card {
+    opacity: 0;               /* Comienza invisible */
+    transform: translateY(20px); /* Empieza desplazada hacia abajo */
+    animation: fadeIn 0.5s ease-out forwards; /* Animación suave */
+
+    border: solid 2px rgb(255, 189, 67);
+    display: flex;               /* Flexbox para centrar el contenido dentro de la tarjeta */
+    flex-direction: column;      /* Apila el contenido verticalmente */
+    justify-content: center;     /* Centra verticalmente */
+    /* text-align: justify;         */
+    border-radius: 25px;         /* Bordes redondeados */
+    padding: 15px 20px;               /* Espacio interno */
+    background-color: rgb(255, 255, 255); /* Color de fondo */
+    width: calc(80% - 20px);    /* Establece el ancho (3 tarjetas en una fila) y ajusta el margen */
+    min-height: 200px;
+    margin: 10px;               /* Espacio entre tarjetas */
+    box-sizing: border-box;      /* Incluye padding y bordes en el ancho total */
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+}
+.card:nth-child(1) {
+    animation-delay: 0.1s; /* Primera tarjeta: aparece después de 0.1s */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cont_line_p{
+    display: flex;
+    justify-content: space-between; /* Coloca los elementos en los extremos */
+    width: 100%;
+}
+.cont_line_p p{
+    margin: 0px 20px 4px 20px;
+}
+.p_card{
+    margin-right: 10vh; 
+}
+
+.p_card_primary{
+    margin: 0px 0px 4px 20px;
+}
+
+p{
+    font-size: 17px;
+}

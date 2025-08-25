@@ -1,0 +1,78 @@
+h2{
+    text-align: center;
+    font-size: 24px;
+}
+.inf-tile {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    font-size: 18px;
+    width: 130px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    /* Asegura que las columnas estén separadas */
+    gap: 20px;
+    align-items: flex-start;
+    /* Alinea las columnas en la parte superior */
+    height: 55px;
+}
+
+.columna-izquierda,
+.columna-derecha {
+    flex: 1;
+    /* Divide el espacio entre ambas columnas */
+}
+
+.columna-izquierda h4,
+.columna-derecha h4 {
+    margin: 5px 0;
+    /* Espaciado entre elementos */
+}
+
+
+/* Estilos para el botón */
+button {
+    background-color: rgb(255, 255, 255);
+    /* Fondo transparente */
+    color: rgb(43, 41, 41);
+    border: 2px solid beige;
+    /* Bordes blancos */
+    /* padding: 3px 6px; */
+    /* border-radius: 5px; */
+    border-color: rgb(223, 165, 90);
+    cursor: pointer;
+    /* Cambia el cursor a puntero */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* width: 16%;
+    margin-top: 0px;
+    margin-bottom: 16px; */
+}
+
+/* Cambios en el botón al pasar el cursor */
+button:hover {
+    background-color: rgb(223, 165, 90);
+    color: white
+        /* Texto en color oscuro */
+}
+
+.cont-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 2px;
+    font-size: 16px;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 2px;
+    outline: none;
+    width: 100px;
+}

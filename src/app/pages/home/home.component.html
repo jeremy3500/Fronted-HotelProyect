@@ -1,0 +1,61 @@
+<div class="layout">
+    <!-- CONTENIDO NAVBAR -->
+    <nav class="navbar">
+
+        <!-- CONTENIDO USUARIO -->
+        <div class="content-user">
+            <i class="fa-solid fa-user fa-2x icon-user"></i>
+            <div class="NombreUsuario">{{ NombreUsuario }}</div>
+        </div>
+
+        <div class="content-nav-body">
+
+            <!-- TÍTULO Y ENLACES -->
+            <div class="nav-content">
+                <div class="title">{{ title }}</div>
+                <div class="nav-links">
+                    <!-- <a href="/home/inicio" *ngIf="!esAdministrador">Inicio</a> -->
+                    <!-- <a href="/home/inicio" *ngIf="!esAdministrador">Contacto</a> -->
+                    <!-- <a class="nav-Admin" href="/home/list-usuarios" *ngIf="esAdministrador">Lista de Usuarios</a> -->
+                    <!-- <a class="nav-Admin" href="/home/list-reservas" *ngIf="esAdministrador">Lista de Reservas</a>
+                    <a class="nav-Admin" href="/home/dashboard" *ngIf="esAdministrador">Dashboard</a> -->
+
+                    <a routerLink="/home/inicio" [ngClass]="{ 'selected': selectedLink === 'inicio' }"
+                        (click)="selectLink('inicio')" (click)="inicio()" *ngIf="!esAdministrador">Inicio</a>
+
+                    <a routerLink="/home/reserva" [ngClass]="{ 'selected': selectedLink === 'reserva' }"
+                        (click)="selectLink('reserva')" (click)="reserva()">Reservas</a>
+
+                    <a routerLink="/home/inicio" [ngClass]="{ 'selected': selectedLink === 'contacto' }"
+                        (click)="selectLink('contacto')" (click)="contacto()">Informacion</a>
+
+                    <a routerLink="/home/list-usuarios" [ngClass]="{ 'selected': selectedLink === 'lista-user' }"
+                        (click)="selectLink('lista-user')" (click)="dirig_listuser()" *ngIf="esAdministrador">Lista de
+                        Usuarios</a>
+
+                    <a routerLink="/home/list-reservas" [ngClass]="{ 'selected': selectedLink === 'lista-reserv' }"
+                        (click)="selectLink('lista-reserv')" (click)="dirig_listreserv()" *ngIf="esAdministrador">Lista
+                        de Reservas</a>
+
+                    <a routerLink="/home/dashboard" [ngClass]="{ 'selected': selectedLink === 'dashboard' }"
+                        (click)="selectLink('dashboard')" (click)="dirig_dashboard()"
+                        *ngIf="esAdministrador">Dashboard</a>
+
+
+                </div>
+            </div>
+
+            <button class="nav-button" (click)="cerrarSesion()">Cerrar Sesion</button>
+
+        </div>
+
+    </nav>
+
+    <!-- CONTENIDO BODY -->
+    <main class="content">
+        <div style="min-height: 100vh;">
+            <router-outlet></router-outlet>
+        </div>
+        <footer>© creado por TuPapiRiko</footer>
+    </main>
+</div>

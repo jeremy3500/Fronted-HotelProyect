@@ -1,0 +1,38 @@
+h2 {
+    text-align: center;
+}
+
+.inf-data {
+    font-size: 18px;
+    width: 300px;
+    text-align: center;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(43, 41, 41);
+    border: 2px solid beige;
+    border-color: rgb(223, 165, 90);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 16px;
+}
+
+button:hover {
+    background-color: rgb(223, 165, 90);
+    color: white
+}
+
+.cont-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}

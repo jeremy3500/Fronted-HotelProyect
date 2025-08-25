@@ -1,0 +1,173 @@
+<div class="content-general">
+    <div class="content">
+        <h2>Habitaciones Disponibles Hoy</h2>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Icon Cards-->
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-2">
+                    <div class="inforide">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone" style="background-color: #9A75FE;">
+                                <i class="fa-solid fa-user-large"></i>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                <h4>Individual</h4>
+                                <h2> {{numerosActuales[0]}} </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-2">
+                    <div class="inforide">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone " style="background-color: #9A75FE;">
+                                <i class="fa-solid fa-user-group"></i>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                <h4>Doble</h4>
+                                <h2> {{numerosActuales[1]}} </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-2">
+                    <div class="inforide">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone" style="background-color: #4EBCE5;">
+                                <i class="fa-solid fa-diamond"></i>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                <h4>Suit</h4>
+                                <h2> {{numerosActuales[2]}} </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    
+    
+
+    
+    <div class="content">
+        <h2>Reservas</h2>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Icon Cards-->
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-2">
+                    <div class="inforide">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone" style="background-color: #58af8b;">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                <h4>En Proceso</h4>
+                                <h2> {{numerosActuales[3]}} </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-2">
+                    <div class="inforide">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone " style="background-color: #caaf7c;">
+                                <i class="fa-solid fa-calendar-minus"></i>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                <h4>Pendientes</h4>
+                                <h2> {{numerosActuales[4]}} </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <div class="content">
+        <h2>Otros Datos</h2>
+        <div class="inline">
+            <h3>- Ingresos Totales:</h3> <h3>S/. {{numerosActuales[5]}}.00 </h3>
+        </div>
+        <div class="inline">
+            <h3>- Ingresos Pendientes:</h3> <h3>S/. {{numerosActuales[6]}}.00 </h3>
+        </div>
+        <div class="inline">
+            <h3>- Clientes Registrados:</h3> <h3>{{numerosActuales[7]}}</h3>
+        </div>
+    </div>
+
+    <div class="content content-grafico">
+
+        <div cont-tile-grafic>
+            <h2 style="width: 100%;">Reservas Durante la Semana</h2>
+            <div style="width: 50%;">
+                <div style="width: 320px; display: flex;">
+                    <div class="leyenda" style="background-color: #8ea6ec;"></div><h3>Reservas</h3>
+                </div>
+                <div style="width: 320px; display: flex;">
+                    <div class="leyenda" style="background-color: #64db7e;"></div><h3>Reservas Confirmados</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart">
+                <div class="bar-group">
+                    <div class="bar" [style.height.%]="(dataReserva[0].reservado / cantTotalResrv) * 300">{{ dataReserva[0].reservado }}</div>
+                    <div class="bar_2" [style.height.%]="(dataReserva[0].procesado / cantTotalResrv) * 300">{{ dataReserva[0].procesado }}</div>
+                </div>
+                <div class="bar-group">
+                    <div class="bar" [style.height.%]="(dataReserva[1].reservado / cantTotalResrv) * 300">{{ dataReserva[1].reservado }}</div>
+                    <div class="bar_2" [style.height.%]="(dataReserva[1].procesado / cantTotalResrv) * 300">{{ dataReserva[1].procesado }}</div>
+                </div>
+                <div class="bar-group">
+                    <div class="bar" [style.height.%]="(dataReserva[2].reservado / cantTotalResrv) * 300">{{ dataReserva[2].reservado }}</div>
+                    <div class="bar_2" [style.height.%]="(dataReserva[2].procesado / cantTotalResrv) * 300">{{ dataReserva[2].procesado }}</div>
+                </div>
+                <div class="bar-group">
+                    <div class="bar" [style.height.%]="(dataReserva[3].reservado / cantTotalResrv) * 300">{{ dataReserva[3].reservado }}</div>
+                    <div class="bar_2" [style.height.%]="(dataReserva[3].procesado / cantTotalResrv) * 300">{{ dataReserva[3].procesado }}</div>
+                </div>
+                <div class="bar-group">
+                    <div class="bar" [style.height.%]="(dataReserva[4].reservado / cantTotalResrv) * 300">{{ dataReserva[4].reservado }}</div>
+                    <div class="bar_2" [style.height.%]="(dataReserva[4].procesado / cantTotalResrv) * 300">{{ dataReserva[4].procesado }}</div>
+                </div>
+                <div class="bar-group">
+                    <div class="bar" [style.height.%]="(dataReserva[5].reservado / cantTotalResrv) * 300">{{ dataReserva[5].reservado }}</div>
+                    <div class="bar_2" [style.height.%]="(dataReserva[5].procesado / cantTotalResrv) * 300">{{ dataReserva[5].procesado }}</div>
+                </div>
+                <div class="bar-group">
+                    <div class="bar" [style.height.%]="(dataReserva[6].reservado / cantTotalResrv) * 300">{{ dataReserva[6].reservado }}</div>
+                    <div class="bar_2" [style.height.%]="(dataReserva[6].procesado / cantTotalResrv) * 300">{{ dataReserva[6].procesado }}</div>
+                </div>
+                
+            </div>
+
+
+            <!-- Línea debajo del gráfico -->
+            <div class="line"></div>
+
+            <!-- Nombres debajo de las barras -->
+            <div class="labels">
+                <span>Lunes</span>
+                <span>Martes</span>
+                <span>Miercoles</span>
+                <span>Jueves</span>
+                <span>Viernes</span>
+                <span>Sabado</span>
+                <span>Domingo</span>
+            </div>
+        </div>
+    </div>
+
+</div>

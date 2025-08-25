@@ -1,0 +1,43 @@
+<div>
+     <mat-card class="card-container">
+          <mat-card-header>
+               <mat-card-title>MIS RESERVAS</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+               <div class="container">
+                    <div class="card-container_2" *ngFor="let reserva of listaReserva">
+                         <mat-card class="card">
+                              <h1 style="text-align: center;"> RESERVA - {{ getFormattedId(reserva.id.toString()) }} </h1>
+
+                              <div class="cont_line_p">
+                                   <p> Fecha de Inicio: </p>
+                                   <p class="p_card"> {{ formatearFecha(reserva.fecha_inicio.toString()) }} PM</p>
+                              </div>
+
+                              <div class="cont_line_p">
+                                   <p> Fecha de Fin: </p>
+                                   <p class="p_card"> {{ formatearFecha(reserva.fecha_fin.toString()) }} PM </p>
+                              </div>
+
+                              <div class="cont_line_p">
+                                   <p> Número de Habitación: </p>
+                                   <p class="p_card"> {{ reserva.numero_habitacion }} </p>
+                              </div>
+
+                              <div class="cont_line_p">
+                                   <p> Tipo de Habitación: </p>
+                                   <p class="p_card"> {{ reserva.tipo_habitacion }} </p>
+                              </div>
+
+                              <div class="cont_line_p">
+                                   <p > Monto Total: </p>
+                                   <p class="p_card"> S/. {{ reserva.monto_total }}.00 </p>
+                              </div>
+                         </mat-card>
+                    </div>
+               </div>
+
+          </mat-card-content>
+     </mat-card>
+</div>

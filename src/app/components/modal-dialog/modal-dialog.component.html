@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Reserva Numero {{data.reserva}}</h2>
+
+<mat-dialog-content class="contenedor">
+    <div class="columna-izquierda">
+        <h4 class="inf-tile">Cliente: </h4>
+        <h4 class="inf-tile">Dni: </h4>
+        <h4 class="inf-tile">Nro Habitacion: </h4>
+        <h4 class="inf-tile">Fecha Inicio: </h4>
+        <h4 class="inf-tile">Fecha Fin: </h4>
+        <h4 class="inf-tile">Monto Total: </h4>
+        <h4 class="inf-tile">Estado: </h4>
+    </div>
+
+    <div class="columna-derecha">
+        <h4 class="inf-data">{{data.cliente}}</h4>
+        <h4 class="inf-data">{{data.dni}}</h4>
+        <h4 class="inf-data">{{data.habitacion}}</h4>
+        <h4 class="inf-data">{{data.fech_ini}}</h4>
+        <h4 class="inf-data">{{data.fech_fin}}</h4>
+        <h4 class="inf-data">S/. {{data.monto}}</h4>
+        <!-- <h4 class="inf-data">{{data.estado}}</h4> -->
+
+        <mat-select [(ngModel)]="data.estado" name="food">
+            @for (food of foods; track food) {
+            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+            }
+        </mat-select>
+
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="cont-buttons">
+    <button mat-button (click)="onNoClick()">Cerrar</button>
+    <button mat-button [mat-dialog-close]="ok()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

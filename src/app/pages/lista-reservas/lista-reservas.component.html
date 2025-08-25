@@ -1,0 +1,52 @@
+<div>
+    <mat-card class="card-container">
+        <mat-card-header class="hedd">
+            <mat-card-title>LISTA DE RESERVAS</mat-card-title>
+            <button class="button actualizar" (click)="buscarReserva()">Buscar Reserva</button>
+            <button class="button actualizar" (click)="actualizar()">Actualizar</button>
+        </mat-card-header>
+
+        <mat-card-content>
+            <div class="container">
+                <div class="card-container_2">
+                    <mat-card class="card_principal">
+
+                        <p class="datos_simple_1"> Reserva </p>
+                        <p class="datos"> Cliente </p>
+                        <p class="datos_simple_1"> DNI </p>
+                        <p class="datos_simple_1"> Habitacion </p>
+                        <p class="datos_simple"> Fecha Inicio </p>
+                        <p class="datos_simple"> Fecha Fin </p>
+                        <p class="datos_simple_1"> Monto Total </p>
+                        <p class="datos_simple_1"> Estado </p>
+                        <p class="datos_simple_1"> Accion </p>
+                        
+                    </mat-card>
+                </div>
+            </div>
+        </mat-card-content>
+
+        <mat-card-content>
+            <div class="container">
+                <div class="card-container_2" *ngFor="let reserva of listaReserva">
+                    
+                    <mat-card class="card">
+
+                        <p class="datos_simple_1"> {{ getFormattedId(reserva.id.toString()) }} </p>
+                        <p class="datos"> {{ reserva.cliente }} </p>
+                        <p class="datos_simple_1"> {{ reserva.dni }}  </p>
+                        <p class="datos_simple_1"> {{ reserva.numero_habitacion }}  </p>
+                        <p class="datos_simple"> {{ formatearFecha(reserva.fecha_inicio.toString()) }}  </p>
+                        <p class="datos_simple"> {{ formatearFecha(reserva.fecha_fin.toString()) }}  </p>
+                        <p class="datos_simple_1"> S/. {{ reserva.monto_total }}  </p>
+                        <p class="datos_simple_1"> {{ reserva.estado }}  </p>
+                        <button class="button" (click)="openDialog(reserva)">VER</button>
+
+                    </mat-card>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<!--    1           2       3       4           5           6           7           8   -->
+<!-- Cod Reserva, Cliente, Dni, Habitacion, Fecha Inicio, Fecha Fin, Monto Total, Estado  -->

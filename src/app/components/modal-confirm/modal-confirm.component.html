@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>CONFIRMACION</h2>
+
+<mat-dialog-content class="contenedor">
+    <h4 class="inf-data">{{data.mensaje}}</h4>
+</mat-dialog-content>
+
+<mat-dialog-actions class="cont-buttons">
+    <button mat-button (click)="onNoClick()">No</button>
+    <button mat-button [mat-dialog-close]="ok()" cdkFocusInitial>SI</button>
+</mat-dialog-actions>

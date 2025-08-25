@@ -1,0 +1,66 @@
+<div class="body">
+
+     <!-- IMAGEN -->
+     <div class="image-fondo">
+          <img src="https://i0.wp.com/travelandleisure-es.com/wp-content/uploads/2024/06/vacaciones-en-familia.jpg?resize=1536%2C1024&ssl=1"
+               alt="Descripción de la imagen">
+     </div>
+
+     <!-- CONTENEDOR LOGIN -->
+     <div class="card-container">
+
+          <mat-card class="contenedor">
+
+               <div class="content-logi">
+
+                    <mat-card-header>
+                         <mat-card-title>Registrarse</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                         <form class="form-custom" [formGroup]="formRegistro">
+                              <!-- NOMBRE -->
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Nombre</mat-label>
+                                   <!-- <input matInput formControlName="nombre"> -->
+                                   <input matInput maxlength="20" pattern="[a-zA-Z ]*" formControlName="nombre"/>
+                              </mat-form-field>
+
+                              <!-- DNI -->
+                              <mat-form-field class="input-custom">
+                                   <mat-label>DNI</mat-label>
+                                   <!-- <input matInput formControlName="dni"> -->
+                                   <input matInput maxlength="8" pattern="[0-9]*" inputmode="numeric" formControlName="dni"/>
+                              </mat-form-field>
+                              
+                              <!-- CORREO -->
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Correo</mat-label>
+                                   <!-- <input matInput formControlName="correo"> -->
+                                   <input matInput maxlength="30" type="email" formControlName="correo"/>
+                              </mat-form-field>
+                              
+                              <!-- CONTRASEÑA -->
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Clave</mat-label>
+                                   <!-- <input matInput formControlName="clave" type="password"> -->
+                                   <input matInput maxlength="20" type="password"  formControlName="clave"/>
+                              </mat-form-field>
+
+                              <!-- BOTONES -->
+                              <div class="flex">
+                                   <button mat-flat-button 
+                                   color="primary" 
+                                   (click)="registrarse()">Registrarse</button>
+                                   <button mat-flat-button color="warn" 
+                                   (click)="volver()" 
+                                   style="margin-left:8px">Volver</button>
+                              </div>
+                         </form>
+                    </mat-card-content>
+               </div>
+               <div class="creador"> Creado por TuPapi</div>
+          </mat-card>
+     </div>
+</div>
+
+

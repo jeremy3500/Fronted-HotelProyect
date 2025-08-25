@@ -1,0 +1,114 @@
+<div class="card-general">
+
+    <mat-card class="card-container">
+        <mat-card-header style="margin-bottom: 20px;">
+            <mat-card-title>VER HABITACIONES DISPONIBLES</mat-card-title>
+        </mat-card-header>
+
+        <form class="form-custom" [formGroup]="formHabitaciones">
+            <div class="cbos">
+                <!-- Tipo de Habitación -->
+                <mat-form-field class="cbo_Selects">
+                    <mat-label>Tipo de Habitación</mat-label>
+                    <mat-select formControlName="tipoHabitacion">
+                        <mat-option *ngFor="let food of tipo_habitacion" [value]="food.value">
+                            {{ food.viewValue }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="cbos column-layout">
+                <!-- Fecha de Inicio -->
+                <mat-form-field class="cbo_Selects">
+                    <mat-label>Fecha de Inicio</mat-label>
+                    <input matInput [matDatepicker]="pickerInicio" formControlName="fechaInicio" [min]="today">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerInicio></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Fecha de Fin -->
+                <mat-form-field class="cbo_Selects">
+                    <mat-label>Fecha de Fin</mat-label>
+                    <input matInput [matDatepicker]="pickerFin" formControlName="fechaFin" [min]="today">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerFin"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerFin></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <!--div class="flex">
+                <button mat-flat-button (click)="realizarReserva()" class="flex">Realizar Reserva</button>
+            </!--div-->
+
+            <button class="button" (click)="verHabitaciones()">Ver Habitaciones</button>
+        </form>
+
+        <div class="container">
+            <div class="card-container_2" *ngFor="let Habit of listaHabitacion">
+                <mat-card class="card">
+
+                    <div class="divid">
+                        <img
+                            src="https://imgs.search.brave.com/gRfFsfccm5KmTL62KK98kBYJgaEeoJU3OPvQPEd1U7k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aGVn/cmFuZGVjb2xvbmlh/bC5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDIvQ29s/b25pYWwtS2luZy5q/cGc">
+
+                        <div class="cont-inform">
+                            <h2 style="text-align: center;"> Habitacion Nro. {{ Habit.numero_habitacion }} </h2>
+
+                            <!-- <div class="cont_line_p">
+                                <p> Número de Habitación: </p>
+                                <p class="p_card"> {{ Habit.numero_habitacion }} </p>
+                            </div> -->
+
+                            <div class="cont_line_p">
+                                <p> Tipo de Habitación: </p>
+                                <p class="p_card"> {{ Habit.tipo_habitacion }} </p>
+                            </div>
+
+                            <div class="cont_line_p">
+                                <p> Monto por Noche: </p>
+                                <p class="p_card"> S/. {{ Habit.precio_noche }} </p>
+                            </div>
+
+                            <div class="cont_line_p">
+                                <p> Descripcion: </p>
+                                <p class="p_card"> {{ Habit.descripcion }} </p>
+                            </div>
+
+
+                            <div class="cont_line_p">
+                                <p></p>
+                                <button class="button_habit" (click)="realizarReserva(Habit)">Reservar</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </mat-card>
+            </div>
+        </div>
+
+    </mat-card>
+
+    <!-- <mat-card class="card-container2">
+        <mat-card-header style="margin-bottom: 20px;">
+            <mat-card-title>REALIZAR UNA RESERVA</mat-card-title>
+        </mat-card-header>
+
+        <form class="form-custom" [formGroup]="formReservas">
+
+            <mat-form-field class="input-custom">
+                <mat-label>Cod Habitacion</mat-label>
+                <input matInput formControlName="codHabitacion">
+            </mat-form-field>
+
+
+            <button class="button_2" (click)="realizarReserva()">Realizar Reserva</button>
+        </form>
+
+
+    </mat-card> -->
+</div>

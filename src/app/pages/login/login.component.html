@@ -1,0 +1,46 @@
+<div class="body">
+
+     <!-- IMAGEN -->
+     <div class="image-fondo">
+          <img src="https://i0.wp.com/travelandleisure-es.com/wp-content/uploads/2024/06/vacaciones-en-familia.jpg?resize=1536%2C1024&ssl=1"
+               alt="Descripción de la imagen">
+     </div>
+
+     <!-- CONTENEDOR LOGIN -->
+     <div class="card-container">
+
+          <mat-card class="contenedor">
+
+               <div class="content-logi">
+
+                    <!-- TITULO -->
+                    <mat-card-header>
+                         <mat-card-title class="title">Iniciar Sesion</mat-card-title>
+                    </mat-card-header>
+
+                    <!-- INPUTS -->
+                    <mat-card-content>
+                         <form class="form-custom" [formGroup]="formLogin">
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Correo</mat-label>
+                                   <input matInput formControlName="correo">
+                              </mat-form-field>
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Clave</mat-label>
+                                   <input matInput formControlName="clave" type="password">
+                              </mat-form-field>
+
+                              <!-- BOTONES -->
+                              <div class="flex">
+                                   <button mat-flat-button color="primary" (click)="iniciarSesion()">Iniciar
+                                        Sesion</button>
+                                   <button mat-flat-button color="warn" (click)="registrarse()"
+                                        style="margin-left:8px">Registrarse</button>
+                              </div>
+                         </form>
+                    </mat-card-content>
+               </div>
+               <div class="creador"> Creado por TuPapi</div>
+          </mat-card>
+     </div>
+</div>

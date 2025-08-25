@@ -1,0 +1,135 @@
+/* Layout general */
+.layout {
+    display: flex; /* Divide el espacio entre el navbar y el contenido */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evita scroll del contenedor principal */
+  }
+  
+  /* NAVBAR (Barra lateral) */
+  .navbar {
+    width: 250px; /* Ancho fijo de la barra lateral */
+    background-color: rgb(56, 52, 52); /* Color de fondo */
+    color: beige; /* Color del texto */
+    position: fixed; /* Fija la barra lateral */
+    height: 100%; /* Ocupa toda la altura */
+    padding: 0px 0px 20px 0px; /* Espaciado superior e inferior */
+    display: flex; /* Organiza el contenido con flexbox */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: flex-start; /* Distribuye espacio entre las secciones */
+    z-index: 10; /* Asegura que esté en la capa superior */
+  }
+
+  .nav-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Alinea el título y los enlaces en columna */
+    gap: 10px; /* Espacio entre el título y los botones */
+    padding: 10px 20px; /* Espaciado interno */
+    }
+  
+  .title {
+    font-size: 18px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    color: beige; /* Color acorde al tema */
+    margin: 0px; /* Elimina márgenes extra */
+    text-align: initial; /* Centra el texto del título */
+    width: 200px;
+    }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column; /* Enlaces en columna */
+    gap: 5px;
+    padding-left: 16px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 180px;;
+  }
+
+  /* Estilo para el enlace seleccionado */
+  .nav-links a.selected {
+    color: rgb(44, 42, 42); /* Color de texto */
+    background-color: #e2cc9c; /* Color de fondo cuando está seleccionado */
+    border-radius: 5px; /* Opcional, para bordes redondeados */
+  }
+  
+  .nav-links a:hover {
+    /* background-color: rgb(78, 78, 78); */
+    background-color: rgb(223, 165, 90);
+  }
+  
+  /* Usuario */
+  .content-user {
+    background-color: rgb(211, 211, 211);
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    width: 250px;
+    height: 120px;
+  }
+  
+  .icon-user {
+    color: rgb(56, 52, 52);
+  }
+  
+  .NombreUsuario {
+    font-size: 20px;
+    color: rgb(56, 52, 52);
+  }
+  
+  /* CONTENIDO PRINCIPAL */
+  .content {
+    margin-left: 250px; /* Mismo valor que el ancho del navbar */
+    width: calc(100% - 250px); /* Ocupa el resto del espacio */
+    overflow-y: auto; /* Scroll vertical independiente */
+    padding: 0px;
+    background-color: #f4f4f4; /* Color de fondo */
+  }
+  
+  footer {
+    background-color: rgb(56, 52, 52);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    /* margin-top: 20px; */
+    width: 100%;
+  }
+  
+
+
+  /* Estilos para el botón */
+.nav-button {
+    background-color: transparent; /* Fondo transparente */
+    color: beige; /* Color del texto */
+    border: 2px solid beige; /* Bordes blancos */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a puntero */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 20px;    
+    margin-left: 20px;
+}
+
+/* Cambios en el botón al pasar el cursor */
+.nav-button:hover {
+    background-color: beige; /* Fondo blanco */
+    color: rgb(56, 52, 52); /* Texto en color oscuro */
+}
+
+
+.content-nav-body {
+    display: flex; /* Organiza el contenido con flexbox */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: space-between; /* Distribuye el espacio entre los botones */
+    height: 80%; /* Asegura que el contenedor ocupe todo el espacio vertical disponible */
+    z-index: 10; /* Asegura que esté en la capa superior */
+}
