@@ -57,7 +57,8 @@
     }
 }
 .card:hover {
-    background-color: #6ad9eb; /* Color al pasar el ratón sobre la barra */
+    background-color: #4f4f4f; /* Color al pasar el ratón sobre la barra */
+    color: white;
 }
 
 .card_principal {
