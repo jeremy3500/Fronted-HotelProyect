@@ -45,10 +45,10 @@ export class RegistroComponent {
 
           this.accesoService.registrarse(objeto).subscribe({
                next: (data) =>{
-                    if(data.isSuccess){
+                    if(data.success){
                          let wData = data.detail
                          localStorage.setItem("token",data.token)
-                         localStorage.setItem("IdUser",wData[0].id.toString())
+                         localStorage.setItem("IdUser",wData[0].ID.toString())
                          this.router.navigate(['home'])
                     }else{
                          const dialogRef = this.dialog.open(ModalViewInfComponent, {

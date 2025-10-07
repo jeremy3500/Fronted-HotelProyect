@@ -1,7 +1,8 @@
 import { ResponseUsuario } from "./ResponseUsuario";
 
 export interface ResponseAcceso{
-     isSuccess:boolean,
+     success:boolean,
+     message:string,
      token:string,
      detail: Array<ResponseUsuario>
 }

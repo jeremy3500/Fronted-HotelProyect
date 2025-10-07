@@ -1,13 +1,14 @@
 import { Time } from "@angular/common";
 
 export interface Reserva {
-     id:number,
-     fecha_inicio:string,
-     fecha_fin:string,
-     monto_total:number,
-     numero_habitacion:number,
-     tipo_habitacion:string,
-     cliente:string,
-     dni:string,
-     estado:string,
+     ID:number,
+     FECHA_INICIO:string,
+     FECHA_FIN:string,
+     ESTADO_RESERVA:string,
+     MONTO_TOTAL:number,
+     NUMERO_HABITACION:string,
+     TIPO_HABITACION:string,
+     CLIENTE:string,
+     NRO_DOCUMENTO:string,
+     
 }

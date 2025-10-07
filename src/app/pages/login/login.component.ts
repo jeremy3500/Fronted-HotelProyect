@@ -34,17 +34,18 @@ export class LoginComponent {
           if (this.formLogin.invalid) return;
 
           const objeto: Login = {
-               correo: this.formLogin.value.correo,
-               clave: this.formLogin.value.clave
+               EMAIL_DOCUMENTO: this.formLogin.value.correo,
+               PASSWORD: this.formLogin.value.clave
           }
+          debugger
           this.accesoService.login(objeto).subscribe({
                next: (data) => {
-                    if (data.isSuccess) {
+                    if (data.success) {
 
                          let wData = data.detail
                          localStorage.setItem("token", data.token)
-                         localStorage.setItem("IdUser", wData[0].id.toString())
-                         localStorage.setItem("IdPerfil", wData[0].id_Perfil.toString())
+                         localStorage.setItem("IdUser", wData[0].ID.toString())
+                         localStorage.setItem("IdPerfil", wData[0].ID_PERFIL.toString())
                          this.router.navigate(['home'])
                     } else {
                          const dialogRef = this.dialog.open(ModalViewInfComponent, {

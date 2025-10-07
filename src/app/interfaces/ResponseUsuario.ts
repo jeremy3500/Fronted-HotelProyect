@@ -1,9 +1,11 @@
 export interface ResponseUsuario{
     length: number;
-    id:number,
-    id_Perfil:number,
-    nombres:string,
-    email:string,
-    fecha_Registro:string,
-    dni:string
+    ID:number,
+    ID_PERFIL:number,
+    NOMBRES:string,
+    TIPO_DOCUMENTO:string,
+    DOCUMENTO:string,
+    EMAIL:string,
+    PASSWORD: string,
+    FECHA_REGISTRO:string
 }

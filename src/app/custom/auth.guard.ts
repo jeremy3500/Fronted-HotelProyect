@@ -13,7 +13,7 @@ export const authGuard: CanActivateFn = (route, state: RouterStateSnapshot) => {
      if (token != "") {
           return accesoService.validarToken(token).pipe(
                map(data => {
-                    if (data.isSuccess) {
+                    if (data.success) {
                          const idUser = localStorage.getItem("IdPerfil");
                          if (route.routeConfig != null) {
                               let ruta = state.url

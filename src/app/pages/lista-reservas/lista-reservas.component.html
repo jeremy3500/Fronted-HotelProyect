@@ -32,14 +32,14 @@
                     
                     <mat-card class="card">
 
-                        <p class="datos_simple_1"> {{ getFormattedId(reserva.id.toString()) }} </p>
-                        <p class="datos"> {{ reserva.cliente }} </p>
-                        <p class="datos_simple_1"> {{ reserva.dni }}  </p>
-                        <p class="datos_simple_1"> {{ reserva.numero_habitacion }}  </p>
-                        <p class="datos_simple"> {{ formatearFecha(reserva.fecha_inicio.toString()) }}  </p>
-                        <p class="datos_simple"> {{ formatearFecha(reserva.fecha_fin.toString()) }}  </p>
-                        <p class="datos_simple_1"> S/. {{ reserva.monto_total }}  </p>
-                        <p class="datos_simple_1"> {{ reserva.estado }}  </p>
+                        <p class="datos_simple_1"> {{ getFormattedId(reserva.ID.toString()) }} </p>
+                        <p class="datos"> {{ reserva.CLIENTE }} </p>
+                        <p class="datos_simple_1"> {{ reserva.NRO_DOCUMENTO }}  </p>
+                        <p class="datos_simple_1"> {{ reserva.NUMERO_HABITACION }}  </p>
+                        <p class="datos_simple"> {{ formatearFecha(reserva.FECHA_INICIO.toString()) }}  </p>
+                        <p class="datos_simple"> {{ formatearFecha(reserva.FECHA_FIN.toString()) }}  </p>
+                        <p class="datos_simple_1"> S/. {{ reserva.MONTO_TOTAL }}  </p>
+                        <p class="datos_simple_1"> {{ reserva.ESTADO_RESERVA }}  </p>
                         <button class="button" (click)="openDialog(reserva)">VER</button>
 
                     </mat-card>

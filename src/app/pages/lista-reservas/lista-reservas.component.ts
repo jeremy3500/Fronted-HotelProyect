@@ -54,14 +54,14 @@ export class ListaReservasComponent {
 
     const dialogRef = this.dialog.open(ModalDialogComponent, {
       data: {
-        reserva: res.id,
-        cliente: res.cliente,
-        dni: res.dni,
-        habitacion: res.numero_habitacion,
-        fech_ini: this.formatearFecha(res.fecha_inicio.toString()) + " PM",
-        fech_fin: this.formatearFecha(res.fecha_fin.toString()) + " PM",
-        monto: res.monto_total,
-        estado: res.estado
+        reserva: res.ID,
+        cliente: res.CLIENTE,
+        dni: res.NRO_DOCUMENTO,
+        habitacion: res.NUMERO_HABITACION,
+        fech_ini: this.formatearFecha(res.FECHA_INICIO.toString()) + " PM",
+        fech_fin: this.formatearFecha(res.FECHA_FIN.toString()) + " PM",
+        monto: res.MONTO_TOTAL,
+        estado: res.ESTADO_RESERVA
       },
     }); // this.formatearFecha(res.fech_ini.toString())
 
@@ -104,7 +104,7 @@ export class ListaReservasComponent {
       if (result !== undefined) {
         let exist = false
         for (let reserva of this.listaReserva) {
-          if (reserva.id == result) {
+          if (reserva.ID == result) {
             this.openDialog(reserva)
             exist = true
             break

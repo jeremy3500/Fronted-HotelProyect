@@ -22,31 +22,31 @@ export class ReservaService {
      constructor() { }
 
      lista(): Observable<ResponseReserva> {
-          return this.http.get<ResponseReserva>(`${this.baseUrl}Acceso/getReservas?Id=${this.idUser}`)
+          return this.http.get<ResponseReserva>(`${this.baseUrl}Acceso/GET_RESERVAS?Id=${this.idUser}`)
      }
 
      listaHabitacion(objeto: SolitHabitacionRequests): Observable<ResponseHabitacion> {
-          return this.http.post<ResponseHabitacion>(`${this.baseUrl}Acceso/GetHabitaciones`, objeto)
+          return this.http.post<ResponseHabitacion>(`${this.baseUrl}Acceso/GET_HABITACIONES`, objeto)
      }
 
      realizarReserva(objeto: InsertReservaRequests): Observable<ResponseNuevaReserva> {
-          return this.http.post<ResponseNuevaReserva>(`${this.baseUrl}Acceso/InsertReserva`, objeto)
+          return this.http.post<ResponseNuevaReserva>(`${this.baseUrl}Acceso/INSERT_RESERVA`, objeto)
      }
 
      getListaUsuarios(): Observable<ResponseDataUsuario> {
-          return this.http.get<ResponseDataUsuario>(`${this.baseUrl}Acceso/getUsuariosList`)
+          return this.http.get<ResponseDataUsuario>(`${this.baseUrl}Acceso/GET_LIST_USER`)
      }
 
      getListaReservasAll(): Observable<ResponseReserva> {
-          return this.http.get<ResponseReserva>(`${this.baseUrl}Acceso/getReservasList`)
+          return this.http.get<ResponseReserva>(`${this.baseUrl}Acceso/GET_RESERVAS_LIST`)
      }
 
      modificarReserva(objeto: ModificReservaRequests): Observable<ResponseNuevaReserva> {
-          return this.http.post<ResponseNuevaReserva>(`${this.baseUrl}Acceso/modificarReserva`, objeto)
+          return this.http.post<ResponseNuevaReserva>(`${this.baseUrl}Acceso/UPDATE_RESERVA`, objeto)
      }
 
      getDataDashboard(): Observable<ResponseDashboard> {
-          return this.http.get<ResponseDashboard>(`${this.baseUrl}Acceso/getDataDashboard`)
+          return this.http.get<ResponseDashboard>(`${this.baseUrl}Acceso/GET_DATA_DASHBOARD`)
      }
 
 

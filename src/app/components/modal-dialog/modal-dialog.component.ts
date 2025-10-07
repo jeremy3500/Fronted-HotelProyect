@@ -18,7 +18,7 @@ export interface DialogData {
 }
 
 interface Food {
-  value: string;
+  value: number;
   viewValue: string;
 }
 
@@ -35,10 +35,10 @@ export class ModalDialogComponent {
   selectedValue: string = '';
 
   foods: Food[] = [
-    {value: 'Pendiente', viewValue: 'Pendiente'},
-    {value: 'En Proceso', viewValue: 'En Proceso'},
-    {value: 'Finalizado', viewValue: 'Finalizado'},
-    {value: 'Cancelado', viewValue: 'Cancelado'},
+    {value: 1, viewValue: 'Pendiente'},
+    {value: 2, viewValue: 'En Proceso'},
+    {value: 3, viewValue: 'Finalizado'},
+    {value: 4, viewValue: 'Cancelado'},
   ];
 
   readonly dialogRef = inject(MatDialogRef<ModalDialogComponent>);

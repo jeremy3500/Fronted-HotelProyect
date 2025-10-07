@@ -27,11 +27,11 @@ export class HomeComponent {
   ngOnInit(): void {
     this.AccesoService.getDataUser(Number(localStorage.getItem("IdUser"))).subscribe({
       next: (data) => {
-        if (data.detail[0].id_Perfil == 1) {
+        if (data.detail[0].ID_PERFIL == 1) {
           this.title = 'Modulo Administrador';
           this.esAdministrador = true;
         }
-        this.NombreUsuario = data.detail[0].nombres;
+        this.NombreUsuario = data.detail[0].NOMBRES;
       },
       error: (err) => {
         console.log(err.message);
