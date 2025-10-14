@@ -1,5 +1,5 @@
 export interface SolitHabitacionRequests {
-    fecha_inicio:string,
-    fecha_fin:string,
-    tipo_habitacion:string
+    FECHA_INICIO:string,
+    FECHA_FIN:string,
+    TIPO_HABITACION_ID:number
 }

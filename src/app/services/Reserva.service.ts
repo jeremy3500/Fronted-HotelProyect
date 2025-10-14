@@ -51,6 +51,6 @@ export class ReservaService {
 
 
      getDataGrafic(): Observable<ResponseDataGrafic> {
-          return this.http.get<ResponseDataGrafic>(`${this.baseUrl}Acceso/getDatosGrafic`)
+          return this.http.get<ResponseDataGrafic>(`${this.baseUrl}Acceso/GET_DATOS_GRAFIC`)
      }
 }

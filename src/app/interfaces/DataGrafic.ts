@@ -1,5 +1,5 @@
 export interface DataGrafic {
-    id:number,
-    reservado:number,
-    procesado:number
+    ID:number,
+    RESERVADO:number,
+    PROCESADO:number
 }

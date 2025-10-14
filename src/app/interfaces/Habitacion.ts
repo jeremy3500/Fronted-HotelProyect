@@ -1,7 +1,7 @@
 export interface Habitacion {
-    id:number,
-    numero_habitacion:number,
-    tipo_habitacion:string,
-    precio_noche:number,
-    descripcion:string
+    ID:number,
+    NUMERO_HABITACION:string,
+    TIPO_HABITACION:string,
+    PRECIO_NOCHE:number,
+    DESCRIPCION:string
 }

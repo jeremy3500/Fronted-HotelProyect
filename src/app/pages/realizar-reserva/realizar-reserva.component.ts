@@ -20,9 +20,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmComponent } from '../../components/modal-confirm/modal-confirm.component';
 import { ModalViewInfComponent } from '../../components/modal-view-inf/modal-view-inf.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-
+import { ChangeDetectorRef } from '@angular/core';
 interface Food {
-  value: string;
+  value: number;
   viewValue: string;
 }
 
@@ -41,9 +41,10 @@ export class RealizarReservaComponent {
   selectedValue: string = '';
 
   tipo_habitacion: Food[] = [
-    { value: 'Individual', viewValue: 'Individual' },
-    { value: 'Doble', viewValue: 'Doble' },
-    { value: 'Suite', viewValue: 'Suite' },
+    { value: 1, viewValue: 'Individual' },
+    { value: 2, viewValue: 'Doble' },
+    { value: 3, viewValue: 'Familiar' },
+    { value: 4, viewValue: 'Suite' },
   ];
 
   private router = inject(Router);
@@ -61,7 +62,7 @@ export class RealizarReservaComponent {
   });
 
 
-  constructor(private fb: FormBuilder, private datePipe: DatePipe) { }
+  constructor(private fb: FormBuilder, private datePipe: DatePipe, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.formHabitaciones = this.fb.group({
@@ -80,7 +81,7 @@ export class RealizarReservaComponent {
   verHabitaciones() {
     if (this.formHabitaciones.valid) {
       const objeto: SolitHabitacionRequests = this.returnobjHabit();
-      if (objeto.fecha_inicio > objeto.fecha_fin) {
+      if (objeto.FECHA_INICIO > objeto.FECHA_FIN) {
         const dialogRef = this.dialog.open(ModalViewInfComponent, {
           data: {
             mensaje: "La fecha de inicio no puede ser mayor a la fecha de salida."
@@ -88,16 +89,6 @@ export class RealizarReservaComponent {
         });
       }
       
-      // let fechHoy = this.datePipe.transform(new Date(), 'yyyy-MM-dd')
-      // if (!fechHoy) { return; }
-      
-      // else if (objeto.fecha_inicio < fechHoy) {
-      //   const dialogRef = this.dialog.open(ModalViewInfComponent, {
-      //     data: {
-      //       mensaje: "La fecha de inicio no puede ser menor a la fecha de hoy."
-      //     },
-      //   });
-      // }
       else {
         this.ReservaService.listaHabitacion(objeto).subscribe({
           next: (data) => {
@@ -105,6 +96,7 @@ export class RealizarReservaComponent {
             
             if (data.habitaciones.length > 0) {
               this.listaHabitacion = data.habitaciones;
+              this.cdr.detectChanges();
             }
           },
           error: (err) => {
@@ -135,9 +127,9 @@ export class RealizarReservaComponent {
     }
 
     const objeto: SolitHabitacionRequests = {
-      fecha_inicio: fechaInicioFormateada,
-      fecha_fin: fechaFinFormateada,
-      tipo_habitacion: reservaData.tipoHabitacion
+      FECHA_INICIO: fechaInicioFormateada,
+      FECHA_FIN: fechaFinFormateada,
+      TIPO_HABITACION_ID: reservaData.tipoHabitacion
     }
     return objeto;
   }
@@ -160,17 +152,17 @@ export class RealizarReservaComponent {
 
       if (result !== undefined) {
         const objetoHabit: SolitHabitacionRequests = this.returnobjHabit();
-
         const objeto: InsertReservaRequests = {
           id_usuario: Number(localStorage.getItem("IdUser")),
-          id_habitacion: habit.id,
-          fecha_inicio: objetoHabit.fecha_inicio,
-          fecha_fin: objetoHabit.fecha_fin
+          id_habitacion: habit.ID,
+          fecha_inicio: objetoHabit.FECHA_INICIO,
+          fecha_fin: objetoHabit.FECHA_FIN
         }
+        debugger
         this.ReservaService.realizarReserva(objeto).subscribe({
           next: (data) => {
             console.log('Datos recibidos:', data);
-            if (data.isSuccess) {
+            if (data.success) {
               this.limpiarCampos();
               // alert("Reserva realizada con exito.");
             }

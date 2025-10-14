@@ -32,7 +32,6 @@ interface Food {
 
 export class ModalDialogComponent {
   
-  selectedValue: string = '';
 
   foods: Food[] = [
     {value: 1, viewValue: 'Pendiente'},

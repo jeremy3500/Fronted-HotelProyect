@@ -1,6 +1,10 @@
 export interface Usuario{
-     nombre:string,
-     correo:string,
-     clave:string
-     dni:string
+     ID_PERFIL: Number,
+     NOMBRES:string,
+     APELLIDOS:string,
+     TELEFONO:string
+     TIPO_DOCUMENTO_ID:Number
+     DOCUMENTO:string
+     EMAIL:string
+     PASSWORD:string
 }

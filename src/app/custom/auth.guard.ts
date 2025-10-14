@@ -17,7 +17,6 @@ export const authGuard: CanActivateFn = (route, state: RouterStateSnapshot) => {
                          const idUser = localStorage.getItem("IdPerfil");
                          if (route.routeConfig != null) {
                               let ruta = state.url
-                              debugger
                               if (ruta == '/home/list-usuarios' || ruta == '/home/list-reservas' || ruta == '/home/dashboard') {
                                    if (idUser == "1") {
                                         return true;

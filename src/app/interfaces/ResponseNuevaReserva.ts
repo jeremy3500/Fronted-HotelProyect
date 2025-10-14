@@ -1,4 +1,4 @@
 export interface ResponseNuevaReserva{
-    isSuccess:boolean,
-    message:string
+    success:boolean,
+    MESSAGE:string
 }

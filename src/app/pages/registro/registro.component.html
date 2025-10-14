@@ -16,44 +16,75 @@
                     <mat-card-header>
                          <mat-card-title>Registrarse</mat-card-title>
                     </mat-card-header>
-                    <mat-card-content>
+                    <mat-card-content *ngIf="!regist">
                          <form class="form-custom" [formGroup]="formRegistro">
                               <!-- NOMBRE -->
                               <mat-form-field class="input-custom">
                                    <mat-label>Nombre</mat-label>
                                    <!-- <input matInput formControlName="nombre"> -->
-                                   <input matInput maxlength="20" pattern="[a-zA-Z ]*" formControlName="nombre"/>
+                                   <input matInput maxlength="20" formControlName="nombre" (keypress)="soloLetras($event)"/>
                               </mat-form-field>
 
-                              <!-- DNI -->
+                              <!-- APELLIDOS -->
                               <mat-form-field class="input-custom">
-                                   <mat-label>DNI</mat-label>
+                                   <mat-label>Apellidos</mat-label>
+                                   <!-- <input matInput formControlName="nombre"> -->
+                                   <input matInput maxlength="20" formControlName="apellidos" (keypress)="soloLetras($event)"/>
+                              </mat-form-field>
+
+                              <!-- TELEFONO -->
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Telefono</mat-label>
                                    <!-- <input matInput formControlName="dni"> -->
-                                   <input matInput maxlength="8" pattern="[0-9]*" inputmode="numeric" formControlName="dni"/>
-                              </mat-form-field>
-                              
-                              <!-- CORREO -->
-                              <mat-form-field class="input-custom">
-                                   <mat-label>Correo</mat-label>
-                                   <!-- <input matInput formControlName="correo"> -->
-                                   <input matInput maxlength="30" type="email" formControlName="correo"/>
-                              </mat-form-field>
-                              
-                              <!-- CONTRASEÑA -->
-                              <mat-form-field class="input-custom">
-                                   <mat-label>Clave</mat-label>
-                                   <!-- <input matInput formControlName="clave" type="password"> -->
-                                   <input matInput maxlength="20" type="password"  formControlName="clave"/>
+                                   <input matInput maxlength="9" inputmode="numeric" formControlName="telefono" (keypress)="soloNumeros($event)"/>
                               </mat-form-field>
 
                               <!-- BOTONES -->
                               <div class="flex">
+                                   <button mat-flat-button color="warn" 
+                                   (click)="volver()" >Volver</button>
+
                                    <button mat-flat-button 
                                    color="primary" 
-                                   (click)="registrarse()">Registrarse</button>
+                                   style="margin-left:8px"
+                                   (click)="continuar()">Continuar</button>
+                              </div>
+                         </form>
+                    </mat-card-content>
+
+                    <mat-card-content *ngIf="regist">
+                         <form class="form-custom" [formGroup]="formRegistro">
+                              
+                              <!-- DNI -->
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Documento</mat-label>
+                                   <!-- <input matInput formControlName="dni"> -->
+                                   <input matInput maxlength="8" inputmode="numeric" formControlName="documento" (keypress)="soloNumeros($event)"/>
+                              </mat-form-field>
+                              
+                              <!-- CORREO -->
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Email</mat-label>
+                                   <!-- <input matInput formControlName="correo"> -->
+                                   <input matInput maxlength="30" type="email" formControlName="email"/>
+                              </mat-form-field>
+                              
+                              <!-- CONTRASEÑA -->
+                              <mat-form-field class="input-custom">
+                                   <mat-label>Contraseña</mat-label>
+                                   <!-- <input matInput formControlName="clave" type="password"> -->
+                                   <input matInput maxlength="20" type="password"  formControlName="password"/>
+                              </mat-form-field>
+
+                              <!-- BOTONES -->
+                              <div class="flex">
+                                   
                                    <button mat-flat-button color="warn" 
-                                   (click)="volver()" 
-                                   style="margin-left:8px">Volver</button>
+                                   (click)="Regresar()" >Regresar</button>
+                                   <button mat-flat-button 
+                                   color="primary" 
+                                   style="margin-left:8px"
+                                   (click)="registrarse()">Registrarse</button>
                               </div>
                          </form>
                     </mat-card-content>
