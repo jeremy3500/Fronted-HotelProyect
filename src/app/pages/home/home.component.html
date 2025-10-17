@@ -3,49 +3,30 @@
     <nav class="navbar">
 
         <!-- CONTENIDO USUARIO -->
-        <div class="content-user">
+        <!-- <div class="content-user">
             <i class="fa-solid fa-user fa-2x icon-user"></i>
             <div class="NombreUsuario">{{ NombreUsuario }}</div>
-        </div>
+        </div> -->
 
         <div class="content-nav-body">
 
             <!-- TÍTULO Y ENLACES -->
             <div class="nav-content">
-                <div class="title">{{ title }}</div>
-                <div class="nav-links">
-                    <!-- <a href="/home/inicio" *ngIf="!esAdministrador">Inicio</a> -->
-                    <!-- <a href="/home/inicio" *ngIf="!esAdministrador">Contacto</a> -->
-                    <!-- <a class="nav-Admin" href="/home/list-usuarios" *ngIf="esAdministrador">Lista de Usuarios</a> -->
-                    <!-- <a class="nav-Admin" href="/home/list-reservas" *ngIf="esAdministrador">Lista de Reservas</a>
-                    <a class="nav-Admin" href="/home/dashboard" *ngIf="esAdministrador">Dashboard</a> -->
+                <div class="title"> {{ title }}</div>
+                <div style="font-size: 18px; margin-top: 5%;">
 
-                    <a routerLink="/home/inicio" [ngClass]="{ 'selected': selectedLink === 'inicio' }"
-                        (click)="selectLink('inicio')" (click)="inicio()" *ngIf="!esAdministrador">Inicio</a>
-
-                    <a routerLink="/home/reserva" [ngClass]="{ 'selected': selectedLink === 'reserva' }"
-                        (click)="selectLink('reserva')" (click)="reserva()">Reservas</a>
-
-                    <a routerLink="/home/inicio" [ngClass]="{ 'selected': selectedLink === 'contacto' }"
-                        (click)="selectLink('contacto')" (click)="contacto()">Informacion</a>
-
-                    <a routerLink="/home/list-usuarios" [ngClass]="{ 'selected': selectedLink === 'lista-user' }"
-                        (click)="selectLink('lista-user')" (click)="dirig_listuser()" *ngIf="esAdministrador">Lista de
-                        Usuarios</a>
-
-                    <a routerLink="/home/list-reservas" [ngClass]="{ 'selected': selectedLink === 'lista-reserv' }"
-                        (click)="selectLink('lista-reserv')" (click)="dirig_listreserv()" *ngIf="esAdministrador">Lista
-                        de Reservas</a>
-
-                    <a routerLink="/home/dashboard" [ngClass]="{ 'selected': selectedLink === 'dashboard' }"
-                        (click)="selectLink('dashboard')" (click)="dirig_dashboard()"
-                        *ngIf="esAdministrador">Dashboard</a>
-
+                    <button (click)="setActivo('inicio')" [class.activo]="botonActivo === 'inicio'" (click)="inicio()" *ngIf="esAdministrador"><i class="fa-solid fa-house"></i>Inicio</button>
+                    <button (click)="setActivo('mis_reserva')" [class.activo]="botonActivo === 'mis_reserva'" (click)="mis_reserva()" ><i class="fa-solid fa-bookmark"></i>Mis Reservas</button>
+                    <button (click)="setActivo('realizar_reserva')" [class.activo]="botonActivo === 'realizar_reserva'" (click)="realizar_reserva()" ><i class="fa-solid fa-bookmark"></i>Realizar Reservas</button>
+                    <button (click)="setActivo('contacto')" [class.activo]="botonActivo === 'contacto'" (click)="contacto()" ><i class="fa-solid fa-location-dot"></i>Ubicacion</button>
+                    <button (click)="setActivo('dirig_listuser')" [class.activo]="botonActivo === 'dirig_listuser'" (click)="dirig_listuser()" *ngIf="esAdministrador"><i class="fa-solid fa-users"></i>Lista de Usuarios</button>
+                    <button (click)="setActivo('dirig_listreserv')" [class.activo]="botonActivo === 'dirig_listreserv'" (click)="dirig_listreserv()" *ngIf="esAdministrador"><i class="fa-solid fa-database"></i>Lista de Reservas</button>
+                    <button (click)="setActivo('dirig_dashboard')" [class.activo]="botonActivo === 'dirig_dashboard'" (click)="dirig_dashboard()" *ngIf="esAdministrador"><i class="fa-solid fa-grip"></i>Dashboard</button>
 
                 </div>
             </div>
 
-            <button class="nav-button" (click)="cerrarSesion()">Cerrar Sesion</button>
+            <button (click)="cerrarSesion()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</button>
 
         </div>
 

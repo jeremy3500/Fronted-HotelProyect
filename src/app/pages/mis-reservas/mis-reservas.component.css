@@ -1,45 +1,43 @@
 .card-container {
-    margin:auto;
     width: 100%;
-    background-color: rgb(247, 247, 247);
-    /* border: solid 1px rgb(240, 240, 240); */
-    /* border-radius: 20px;  */
     min-height: 100vh;
+    padding: 0px;
+    background-color: aliceblue;
 }
 
-.container{
-    margin-bottom: 40px;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* o space-around */
+    gap: 20px;
+    width: 100%;
+    min-width: 98%;
+    margin: 1%;
 }
 
 .card-container_2 {
-    display: flex;               /* Utiliza flexbox */
-    flex-wrap: wrap;            /* Permite que las tarjetas se envuelvan a la siguiente línea */
-    justify-content: center;     /* Centra las tarjetas horizontalmente */
-    margin: 0 auto;             /* Centra el contenedor */
-    /* margin-top: 10px; */
+    margin: 0;
 }
 
 .card {
-    opacity: 0;               /* Comienza invisible */
-    transform: translateY(20px); /* Empieza desplazada hacia abajo */
-    animation: fadeIn 0.5s ease-out forwards; /* Animación suave */
-
-    border: solid 2px rgb(255, 189, 67);
-    display: flex;               /* Flexbox para centrar el contenido dentro de la tarjeta */
-    flex-direction: column;      /* Apila el contenido verticalmente */
-    justify-content: center;     /* Centra verticalmente */
-    /* text-align: justify;         */
-    border-radius: 25px;         /* Bordes redondeados */
-    padding: 15px 20px;               /* Espacio interno */
-    background-color: rgb(255, 255, 255); /* Color de fondo */
-    width: calc(80% - 20px);    /* Establece el ancho (3 tarjetas en una fila) y ajusta el margen */
-    min-height: 200px;
-    margin: 10px;               /* Espacio entre tarjetas */
-    box-sizing: border-box;      /* Incluye padding y bordes en el ancho total */
-    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+  flex: 0 0 calc(33.33% - 20px);
+  border: 1px solid #c2c2c2;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center center;
+  position: relative;
 }
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
 .card:nth-child(1) {
-    animation-delay: 0.1s; /* Primera tarjeta: aparece después de 0.1s */
+    animation-delay: 0.1s;
 }
 
 @keyframes fadeIn {
@@ -47,28 +45,30 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
-.cont_line_p{
+img{
+    width: 100%;
+    height: 200px;
+    margin: 0px;
+    border-radius: 6px 6px 0px 0px;
+}
+.cont_line_p {
     display: flex;
-    justify-content: space-between; /* Coloca los elementos en los extremos */
+    justify-content: space-between;
     width: 100%;
 }
-.cont_line_p p{
+.p_title{
+    margin: 0px 50px 4px 20px;
+}
+.p_card {
     margin: 0px 20px 4px 20px;
 }
-.p_card{
-    margin-right: 10vh; 
-}
 
-.p_card_primary{
-    margin: 0px 0px 4px 20px;
-}
-
-p{
+p {
     font-size: 17px;
 }

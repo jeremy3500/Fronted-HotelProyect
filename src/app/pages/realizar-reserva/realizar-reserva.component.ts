@@ -73,6 +73,7 @@ export class RealizarReservaComponent {
     this.formReservas = this.fb.group({
       codHabitacion: ['']
     });
+    // this.verHabitaciones();
   }
 
   private ReservaService = inject(ReservaService);
@@ -117,7 +118,6 @@ export class RealizarReservaComponent {
 
   returnobjHabit(): SolitHabitacionRequests {
     const reservaData = this.formHabitaciones.value;
-    // Formatear la fecha usando DatePipe
     const fechaInicioFormateada = this.datePipe.transform(reservaData.fechaInicio, 'yyyy-MM-dd');
     const fechaFinFormateada = this.datePipe.transform(reservaData.fechaFin, 'yyyy-MM-dd');
 

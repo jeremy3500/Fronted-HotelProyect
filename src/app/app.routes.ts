@@ -22,14 +22,16 @@ export const routes: Routes = [
                {path:"", component:InicioComponent},
                {path:"inicio", component:InicioComponent},
                {path:"ubicanos", component:UbicanosComponent},
-               {
-                    path:"reserva", component:ReservasComponent,
-                    children:[
-                         {path:"", component:MisReservasComponent},
-                         {path:"mis-reservas", component:MisReservasComponent},
-                         {path:"realizar-reservas", component:RealizarReservaComponent}
-                    ]
-               }, // localStorage.getItem("IdUser") == 1
+               {path:"mis-reservas", component:MisReservasComponent},
+               {path:"realizar-reservas", component:RealizarReservaComponent},
+               // {
+               //      path:"reserva", component:ReservasComponent,
+               //      children:[
+               //           {path:"", component:MisReservasComponent},
+               //           {path:"mis-reservas", component:MisReservasComponent},
+               //           {path:"realizar-reservas", component:RealizarReservaComponent}
+               //      ]
+               // }, // localStorage.getItem("IdUser") == 1
                {path:"list-usuarios", component:ListaUsuariosComponent},
                {path:"list-reservas", component:ListaReservasComponent},
                {path:"dashboard", component:DashboardComponent, canActivate:[authGuard]},

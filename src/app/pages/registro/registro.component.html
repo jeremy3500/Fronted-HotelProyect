@@ -2,7 +2,7 @@
 
      <!-- IMAGEN -->
      <div class="image-fondo">
-          <img src="https://i0.wp.com/travelandleisure-es.com/wp-content/uploads/2024/06/vacaciones-en-familia.jpg?resize=1536%2C1024&ssl=1"
+          <img src="https://cache.marriott.com/content/dam/marriott-digital/si/cala/hws/l/limsi/en_us/photo/unlimited/assets/si-limsi-hotel-exterior--16528.jpg"
                alt="Descripción de la imagen">
      </div>
 
@@ -13,78 +13,78 @@
 
                <div class="content-logi">
 
-                    <mat-card-header>
-                         <mat-card-title>Registrarse</mat-card-title>
-                    </mat-card-header>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sheraton_%281%29.svg/330px-Sheraton_%281%29.svg.png"
+                         alt="" class="milogo">
+
+                    <div class="con_circles">
+                         <h2>Registrarse</h2>
+                         <div *ngIf="!regist" class="circle" style="margin-left: 135px; background-color: #D9AE30; border-color: #D9AE30;"></div>
+                         <div *ngIf="!regist" class="circle" style="margin-left: 5px; "></div>
+
+                         <div *ngIf="regist" class="circle" style="margin-left: 135px;"></div>
+                         <div *ngIf="regist" class="circle" style="margin-left: 5px; background-color: #D9AE30; border-color: #D9AE30;"></div>
+                    </div>
+
                     <mat-card-content *ngIf="!regist">
                          <form class="form-custom" [formGroup]="formRegistro">
                               <!-- NOMBRE -->
-                              <mat-form-field class="input-custom">
-                                   <mat-label>Nombre</mat-label>
-                                   <!-- <input matInput formControlName="nombre"> -->
-                                   <input matInput maxlength="20" formControlName="nombre" (keypress)="soloLetras($event)"/>
-                              </mat-form-field>
+                              <div class="input-container">
+                                   <input matInput formControlName="nombre" class="miinput" required placeholder=" "
+                                        (keypress)="soloLetras($event)" maxlength="20" />
+                                   <label>Nombres</label>
+                              </div>
 
                               <!-- APELLIDOS -->
-                              <mat-form-field class="input-custom">
-                                   <mat-label>Apellidos</mat-label>
-                                   <!-- <input matInput formControlName="nombre"> -->
-                                   <input matInput maxlength="20" formControlName="apellidos" (keypress)="soloLetras($event)"/>
-                              </mat-form-field>
+                              <div class="input-container">
+                                   <input matInput formControlName="apellidos" class="miinput" required placeholder=" "
+                                        (keypress)="soloLetras($event)" maxlength="20" />
+                                   <label>Apellidos</label>
+                              </div>
 
                               <!-- TELEFONO -->
-                              <mat-form-field class="input-custom">
-                                   <mat-label>Telefono</mat-label>
-                                   <!-- <input matInput formControlName="dni"> -->
-                                   <input matInput maxlength="9" inputmode="numeric" formControlName="telefono" (keypress)="soloNumeros($event)"/>
-                              </mat-form-field>
+                              <div class="input-container">
+                                   <input matInput formControlName="telefono" class="miinput" required placeholder=" "
+                                        (keypress)="soloNumeros($event)" maxlength="9" />
+                                   <label>Telefono</label>
+                              </div>
 
                               <!-- BOTONES -->
-                              <div class="flex">
-                                   <button mat-flat-button color="warn" 
-                                   (click)="volver()" >Volver</button>
-
-                                   <button mat-flat-button 
-                                   color="primary" 
-                                   style="margin-left:8px"
-                                   (click)="continuar()">Continuar</button>
+                              <div class="misbotones">
+                                   <button (click)="volver()" class="volver" style="margin-right: 2%;">Volver a Inicio</button>
+                                   <button (click)="continuar()" class="continuar">Continuar</button>
                               </div>
+
                          </form>
                     </mat-card-content>
 
                     <mat-card-content *ngIf="regist">
                          <form class="form-custom" [formGroup]="formRegistro">
-                              
+
                               <!-- DNI -->
-                              <mat-form-field class="input-custom">
-                                   <mat-label>Documento</mat-label>
-                                   <!-- <input matInput formControlName="dni"> -->
-                                   <input matInput maxlength="8" inputmode="numeric" formControlName="documento" (keypress)="soloNumeros($event)"/>
-                              </mat-form-field>
-                              
+                              <div class="input-container">
+                                   <input matInput formControlName="documento" class="miinput" required placeholder=" "
+                                        (keypress)="soloNumeros($event)" maxlength="8" />
+                                   <label>Documento</label>
+                              </div>
+
                               <!-- CORREO -->
-                              <mat-form-field class="input-custom">
-                                   <mat-label>Email</mat-label>
-                                   <!-- <input matInput formControlName="correo"> -->
-                                   <input matInput maxlength="30" type="email" formControlName="email"/>
-                              </mat-form-field>
-                              
+                              <div class="input-container">
+                                   <input matInput formControlName="email" class="miinput" required placeholder=" "
+                                        maxlength="30" />
+                                   <label>Email</label>
+                              </div>
+
                               <!-- CONTRASEÑA -->
-                              <mat-form-field class="input-custom">
-                                   <mat-label>Contraseña</mat-label>
-                                   <!-- <input matInput formControlName="clave" type="password"> -->
-                                   <input matInput maxlength="20" type="password"  formControlName="password"/>
-                              </mat-form-field>
+                              <div class="input-container">
+                                   <input matInput formControlName="password" class="miinput" required placeholder=" "
+                                        maxlength="20" type="password" style="font-size: 25px; padding: 7px 10px;" />
+                                   <label>Contraseña</label>
+                              </div>
 
                               <!-- BOTONES -->
-                              <div class="flex">
-                                   
-                                   <button mat-flat-button color="warn" 
-                                   (click)="Regresar()" >Regresar</button>
-                                   <button mat-flat-button 
-                                   color="primary" 
-                                   style="margin-left:8px"
-                                   (click)="registrarse()">Registrarse</button>
+                              <div class="misbotones">
+                                   <button (click)="Regresar()" class="volver" style="margin-right: 2%;">Regresar</button>
+                                   <button (click)="registrarse()" class="continuar">Registrarse</button>
                               </div>
                          </form>
                     </mat-card-content>
@@ -93,5 +93,3 @@
           </mat-card>
      </div>
 </div>
-
-

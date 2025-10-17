@@ -28,20 +28,23 @@ export class LoginComponent {
           clave: ['', Validators.required]
      })
 
-     
      readonly dialog = inject(MatDialog);
      iniciarSesion() {
-          if (this.formLogin.invalid) return;
+          if (this.formLogin.invalid) {
+               const dialogRef = this.dialog.open(ModalViewInfComponent, {
+                    data: { mensaje: "Rellene todos los campos." },
+               });
+               return
+          }
 
           const objeto: Login = {
                EMAIL_DOCUMENTO: this.formLogin.value.correo,
                PASSWORD: this.formLogin.value.clave
           }
-          debugger
+
           this.accesoService.login(objeto).subscribe({
                next: (data) => {
                     if (data.success) {
-
                          let wData = data.detail
                          localStorage.setItem("token", data.token)
                          localStorage.setItem("IdUser", wData[0].ID.toString())
@@ -53,7 +56,6 @@ export class LoginComponent {
                                    mensaje: "Las credenciales ingresadas son incorrectas."
                               },
                          });
-                         // alert("Credenciales son incorrectas")
                     }
                },
                error: (error) => {

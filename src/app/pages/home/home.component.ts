@@ -28,7 +28,7 @@ export class HomeComponent {
     this.AccesoService.getDataUser(Number(localStorage.getItem("IdUser"))).subscribe({
       next: (data) => {
         if (data.detail[0].ID_PERFIL == 1) {
-          this.title = 'Modulo Administrador';
+          this.title = 'Administrador';
           this.esAdministrador = true;
         }
         this.NombreUsuario = data.detail[0].NOMBRES;
@@ -39,7 +39,12 @@ export class HomeComponent {
     });
     // Cambia el título
   }
+  botonActivo: string = 'inicio'; // por defecto
 
+  setActivo(nombre: string) {
+    this.botonActivo = nombre;
+    // Puedes también ejecutar otras acciones aquí
+  }
 
   cerrarSesion() {
     localStorage.setItem("token", '')
@@ -51,9 +56,16 @@ export class HomeComponent {
   inicio() {
     this.router.navigate(['/home/inicio'])
   }
-  reserva() {
-    this.router.navigate(['/home/reserva'])
+  // reserva() {
+  //   this.router.navigate(['/home/reserva'])
+  // }
+  mis_reserva() {
+    this.router.navigate(['/home/mis-reservas'])
   }
+  realizar_reserva() {
+    this.router.navigate(['/home/realizar-reservas'])
+  }
+
   contacto() {
     this.router.navigate(['/home/ubicanos'])
   }

@@ -1,43 +1,40 @@
 <div>
      <mat-card class="card-container">
           <mat-card-header>
-               <mat-card-title>MIS RESERVAS</mat-card-title>
+               <mat-card-title style="font-size: 25px;">MIS RESERVAS</mat-card-title>
           </mat-card-header>
-          <mat-card-content>
-
-               <div class="container">
+          <div class="container" style="margin-bottom: 4%;">
                     <div class="card-container_2" *ngFor="let reserva of listaReserva">
                          <mat-card class="card">
-                              <h1 style="text-align: center;"> RESERVA - {{ getFormattedId(reserva.ID.toString()) }} </h1>
+                              <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/465573810.jpg?k=6d5e0bd1f361814e74b39f5a5491dd75898c8c58ea99e157e485ed770f8012b5&o=&hp=1" alt="">
+                              <h1 style="text-align: center; margin-top: 10px; height: 24px;"> RESERVA - {{ getFormattedId(reserva.ID.toString()) }} </h1>
 
                               <div class="cont_line_p">
-                                   <p> Fecha de Inicio: </p>
-                                   <p class="p_card"> {{ formatearFecha(reserva.FECHA_INICIO.toString()) }} PM</p>
+                                   <p class="p_title"> Fecha de Inicio: </p>
+                                   <p class="p_card"> {{ formatearFecha(reserva.FECHA_INICIO.toString()).split(':')[0] }} PM</p>
                               </div>
 
                               <div class="cont_line_p">
-                                   <p> Fecha de Fin: </p>
-                                   <p class="p_card"> {{ formatearFecha(reserva.FECHA_FIN.toString()) }} PM </p>
+                                   <p class="p_title"> Fecha de Fin: </p>
+                                   <p class="p_card"> {{ formatearFecha(reserva.FECHA_FIN.toString()).split(':')[0] }} PM </p>
                               </div>
 
                               <div class="cont_line_p">
-                                   <p> Número de Habitación: </p>
+                                   <p class="p_title"> Número de Habitación: </p>
                                    <p class="p_card"> {{ reserva.NUMERO_HABITACION }} </p>
                               </div>
 
                               <div class="cont_line_p">
-                                   <p> Tipo de Habitación: </p>
+                                   <p class="p_title"> Tipo de Habitación: </p>
                                    <p class="p_card"> {{ reserva.TIPO_HABITACION }} </p>
                               </div>
 
-                              <div class="cont_line_p">
-                                   <p > Monto Total: </p>
+                              <div class="cont_line_p" style="margin-bottom: 10px;">
+                                   <p class="p_title"> Monto Total: </p>
                                    <p class="p_card"> S/. {{ reserva.MONTO_TOTAL }}.00 </p>
                               </div>
                          </mat-card>
                     </div>
                </div>
-
-          </mat-card-content>
      </mat-card>
 </div>
