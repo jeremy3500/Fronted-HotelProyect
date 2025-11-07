@@ -1,39 +1,33 @@
 .card-container {
     width: 100%;
     background-color: rgb(247, 247, 247);
-    /* border: solid 1px rgb(240, 240, 240); */
-    /* border-radius: 20px;  */
     min-height: 100vh;
 }
 
-.container{
+.container {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .card-container_2 {
-    display: flex;               /* Utiliza flexbox */
-    flex-wrap: wrap;            /* Permite que las tarjetas se envuelvan a la siguiente línea */
-    justify-content: center;     /* Centra las tarjetas horizontalmente */
-    margin: 0 auto;             /* Centra el contenedor */
-    /* margin-top: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .card {
-    opacity: 0;               /* Comienza invisible */
-    transform: translateY(20px); /* Empieza desplazada hacia abajo */
-    animation: fadeIn 0.5s ease-out forwards; /* Animación suave */
-
-    display: flex;            /* Establece .mat-card como un contenedor flexbox */
-    justify-content: center;  /* Centra los elementos horizontalmente */
-    align-items: center;      /* Centra los elementos verticalmente */
-    flex-direction: row;      /* Organiza los elementos en una fila */
-    gap: 5px;                /*Espacio entre los elementos*/
-    /* padding: 20px ;            Relleno dentro de la tarjeta */
-    box-shadow: 5 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    border-radius: 3px;       /* Bordes redondeados */
-    background-color: #ffffff; /* Fondo blanco */
-    /* border-color: black solid ; */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    box-shadow: 5 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    background-color: #ffffff;
     width: 200vh;
     height: 50px;
     padding-top: 20px;
@@ -43,7 +37,7 @@
 }
 
 .card:nth-child(1) {
-    animation-delay: 0.1s; /* Primera tarjeta: aparece después de 0.1s */
+    animation-delay: 0.1s;
 }
 
 @keyframes fadeIn {
@@ -51,56 +45,59 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 .card:hover {
-    background-color: #4f4f4f; /* Color al pasar el ratón sobre la barra */
+    background-color: #8f8fe9;
     color: white;
 }
 
 .card_principal {
-    display: flex;            /* Establece .mat-card como un contenedor flexbox */
-    justify-content: center;  /* Centra los elementos horizontalmente */
-    align-items: center;      /* Centra los elementos verticalmente */
-    flex-direction: row;      /* Organiza los elementos en una fila */
-    gap: 2px;                /*Espacio entre los elementos*/
-    /* padding: 20px ;            Relleno dentro de la tarjeta */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    border-radius: 8px;       /* Bordes redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     width: 200vh;
     height: 50px;
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: rgb(247, 174, 39);
+    /* background-color: rgb(247, 174, 39); */
+    color: white;
+    background: linear-gradient(90deg, #5d5fef, #7a7bff);
 }
 
-.datos{
+.datos {
     width: 35%;
 }
 
-.datos_simple{
+.datos_simple {
     width: 30%;
 }
 
-.datos_simple_1{
+.datos_simple_1 {
     width: 20%;
 }
 
 
 /* Estilos para el botón */
 .button {
-    background-color: rgb(255, 255, 255); /* Fondo transparente */
-    color: rgb(43, 41, 41);; /* Color del texto */
-    border: 2px solid beige; /* Bordes blancos */
-    padding: 3px 6px; /* Espaciado interno */
-    font-size: 14px; /* Tamaño de la fuente */
-    border-radius: 5px; /* Bordes redondeados */
+    background-color: rgb(255, 255, 255);
+    color: rgb(43, 41, 41);
+    border: 2px solid beige;
+    padding: 3px 6px;
+    font-size: 14px;
+    border-radius: 5px;
     border-color: rgb(223, 165, 90);
-    cursor: pointer; /* Cambia el cursor a puntero */
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 16%;
     margin-top: 0px;
@@ -110,16 +107,16 @@
 /* Cambios en el botón al pasar el cursor */
 .button:hover {
     background-color: rgb(223, 165, 90);
-    color: white /* Texto en color oscuro */
+    color: white;
 }
 
-.hedd{
+.hedd {
     display: flex;
     justify-content: space-between;
     margin: 0px 15px;
     margin-top: 10px;
 }
 
-.actualizar{
+.actualizar {
     font-size: 20px;
 }
