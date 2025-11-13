@@ -49,6 +49,7 @@ export class LoginComponent {
                          localStorage.setItem("token", data.token)
                          localStorage.setItem("IdUser", wData[0].ID.toString())
                          localStorage.setItem("IdPerfil", wData[0].ID_PERFIL.toString())
+                         localStorage.setItem("modulActiv", 'inicio')
                          this.router.navigate(['home'])
                     } else {
                          const dialogRef = this.dialog.open(ModalViewInfComponent, {

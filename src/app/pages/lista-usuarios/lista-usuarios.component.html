@@ -1,14 +1,14 @@
 <div class="card-container-general">
     <div class="card-container">
         <mat-card-header>
-            <mat-card-title>LISTA DE ADMINISTRADORES</mat-card-title>
+            <mat-card-title class="tittle">LISTA DE ADMINISTRADORES</mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
-            <div class="container">
+            <div>
                 <div class="card-container_2">
                     <mat-card class="card_principal">
-                        
+
                         <p class="datos"> Nombres </p>
                         <p class="datos_simple"> DNI </p>
                         <p class="datos"> Correo </p>
@@ -20,14 +20,14 @@
         </mat-card-content>
 
         <mat-card-content>
-            <div class="container">
+            <div>
                 <div class="card-container_2" *ngFor="let usuario of listaUsuario">
-                    
+
                     <mat-card class="card" *ngIf="usuario.ID_PERFIL==1">
-                        
-                        <p class="datos"> {{ usuario.NOMBRES }} </p> 
+
+                        <p class="datos"> {{ usuario.NOMBRES }} </p>
                         <p class="datos_simple"> {{ usuario.DOCUMENTO }} </p>
-                        <p class="datos"> {{ usuario.EMAIL }} </p> 
+                        <p class="datos"> {{ usuario.EMAIL }} </p>
                         <p class="datos_simple"> {{ formatearFecha(usuario.FECHA_REGISTRO.toString()) }} </p>
 
                     </mat-card>
@@ -39,14 +39,14 @@
 
     <div class="card-container">
         <mat-card-header>
-            <mat-card-title>LISTA DE CLIENTES</mat-card-title>
+            <mat-card-title class="tittle">LISTA DE CLIENTES</mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
-            <div class="container">
+            <div>
                 <div class="card-container_2">
                     <mat-card class="card_principal">
-                        
+
                         <p class="datos"> Nombres </p>
                         <p class="datos_simple"> DNI </p>
                         <p class="datos"> Correo </p>
@@ -58,14 +58,14 @@
         </mat-card-content>
 
         <mat-card-content>
-            <div class="container">
+            <div>
                 <div class="card-container_2" *ngFor="let usuario of listaUsuario">
-                    
+
                     <mat-card class="card" *ngIf="usuario.ID_PERFIL==2">
-                        
-                        <p class="datos"> {{ usuario.NOMBRES }} </p> 
+
+                        <p class="datos"> {{ usuario.NOMBRES }} </p>
                         <p class="datos_simple"> {{ usuario.DOCUMENTO }} </p>
-                        <p class="datos"> {{ usuario.EMAIL }} </p> 
+                        <p class="datos"> {{ usuario.EMAIL }} </p>
                         <p class="datos_simple"> {{ formatearFecha(usuario.FECHA_REGISTRO.toString()) }} </p>
 
                     </mat-card>

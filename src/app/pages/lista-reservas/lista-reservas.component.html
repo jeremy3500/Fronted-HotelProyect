@@ -1,13 +1,13 @@
 <div>
     <mat-card class="card-container">
         <mat-card-header class="hedd">
-            <mat-card-title>LISTA DE RESERVAS</mat-card-title>
+            <mat-card-title class="tittle">LISTA DE RESERVAS</mat-card-title>
             <button class="button actualizar" (click)="buscarReserva()">Buscar Reserva</button>
             <button class="button actualizar" (click)="actualizar()">Actualizar</button>
         </mat-card-header>
 
         <mat-card-content>
-            <div class="container">
+            <div style="margin-top: 10px;">
                 <div class="card-container_2">
                     <mat-card class="card_principal">
 
@@ -27,7 +27,7 @@
         </mat-card-content>
 
         <mat-card-content>
-            <div class="container">
+            <div>
                 <div class="card-container_2" *ngFor="let reserva of listaReserva">
                     
                     <mat-card class="card">

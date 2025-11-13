@@ -17,16 +17,16 @@ h2 {
 
 button {
     background-color: rgb(255, 255, 255);
-    color: rgb(43, 41, 41);
+    color: #6868dc;
     border: 2px solid beige;
-    border-color: rgb(223, 165, 90);
+    border-color: #6868dc;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     margin-bottom: 16px;
 }
 
 button:hover {
-    background-color: rgb(223, 165, 90);
+    background-color: #6868dc;
     color: white
 }
 

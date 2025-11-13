@@ -67,6 +67,7 @@ export class RegistroComponent {
                          let wData = data.detail
                          localStorage.setItem("token", data.token)
                          localStorage.setItem("IdUser", wData[0].ID.toString())
+                         localStorage.setItem("modulActiv", 'inicio')
                          this.router.navigate(['home'])
                     } else {
                          const dialogRef = this.dialog.open(ModalViewInfComponent, {

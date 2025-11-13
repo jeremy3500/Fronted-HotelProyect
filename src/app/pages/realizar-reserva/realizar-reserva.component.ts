@@ -89,12 +89,12 @@ export class RealizarReservaComponent {
           },
         });
       }
-      
+
       else {
         this.ReservaService.listaHabitacion(objeto).subscribe({
           next: (data) => {
             console.log('Datos recibidos:', data);
-            
+
             if (data.habitaciones.length > 0) {
               this.listaHabitacion = data.habitaciones;
               this.cdr.detectChanges();
@@ -158,11 +158,16 @@ export class RealizarReservaComponent {
           fecha_inicio: objetoHabit.FECHA_INICIO,
           fecha_fin: objetoHabit.FECHA_FIN
         }
-        debugger
+
         this.ReservaService.realizarReserva(objeto).subscribe({
           next: (data) => {
             console.log('Datos recibidos:', data);
             if (data.success) {
+              const dialogRef = this.dialog.open(ModalViewInfComponent, {
+                data: {
+                  mensaje: "Reserva creada con exito."
+                },
+              });
               this.limpiarCampos();
               // alert("Reserva realizada con exito.");
             }

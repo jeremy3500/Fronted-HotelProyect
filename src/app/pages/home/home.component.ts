@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card'
 import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon';
-import { InicioComponent } from '../inicio/inicio.component';
-import { ReservasComponent } from '../reservas/reservas.component';
 import { RouterOutlet } from '@angular/router';
 import { AccesoService } from '../../services/acceso.service';
 import { Router } from '@angular/router';
@@ -21,7 +19,7 @@ export class HomeComponent {
   NombreUsuario: string = '';
   esAdministrador: boolean = false;
   private router = inject(Router);
-
+  botonActivo: string = ''; // por defecto
   private AccesoService = inject(AccesoService);
 
   ngOnInit(): void {
@@ -37,12 +35,15 @@ export class HomeComponent {
         console.log(err.message);
       }
     });
+
+    this.botonActivo = localStorage.getItem('modulActiv') ?? '';
     // Cambia el título
   }
-  botonActivo: string = 'inicio'; // por defecto
+  
 
   setActivo(nombre: string) {
     this.botonActivo = nombre;
+    localStorage.setItem("modulActiv", nombre)
     // Puedes también ejecutar otras acciones aquí
   }
 

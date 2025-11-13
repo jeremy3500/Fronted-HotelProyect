@@ -6,7 +6,8 @@ import { MatTableModule } from '@angular/material/table'
 import { ReservaService } from '../../services/Reserva.service';
 import { Reserva } from '../../interfaces/Reserva';
 import { splitNsName } from '@angular/compiler';
-
+import { ModalViewInfComponent } from '../../components/modal-view-inf/modal-view-inf.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-mis-reservas',
   standalone: true,
@@ -19,8 +20,9 @@ export class MisReservasComponent {
   public listaReserva: Reserva[] = []
   //public displayedColumns: string[] = ['id', 'fecha_inicio', 'fecha_fin', 'monto_total', 'numero_habitacion', 'tipo_habitacion'];
   
-  constructor() {
+  constructor() {    
     this.ReservaService.lista().subscribe({
+    
       next: (data) => {
         if (data.value.length > 0) {
           this.listaReserva = data.value;

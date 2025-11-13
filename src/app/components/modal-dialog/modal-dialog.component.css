@@ -20,46 +20,41 @@ h2{
 
 .contenedor {
     display: flex;
-    justify-content: space-between; /* Asegura que las columnas estén separadas */
+    justify-content: space-between;
     gap: 50px;
-    align-items: flex-start; /* Alinea las columnas en la parte superior */
+    align-items: flex-start;
 }
 
 .columna-izquierda, .columna-derecha {
-    flex: 1; /* Divide el espacio entre ambas columnas */
+    flex: 1;
 }
 
 .columna-izquierda h4, .columna-derecha h4 {
-    margin: 5px 0; /* Espaciado entre elementos */
+    margin: 5px 0;
 }
 
 
 /* Estilos para el botón */
 button {
-    background-color: rgb(255, 255, 255); /* Fondo transparente */
-    color: rgb(43, 41, 41);
-    border: 2px solid beige; /* Bordes blancos */
-    /* padding: 3px 6px; */
-    /* border-radius: 5px; */
-    border-color: rgb(223, 165, 90);
-    cursor: pointer; /* Cambia el cursor a puntero */
+    background-color: rgb(255, 255, 255);
+    color: #6868dc;
+    border: 2px solid beige;
+    border-color: #6868dc;
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* width: 16%;
-    margin-top: 0px;
-    margin-bottom: 16px; */
 }
 
 /* Cambios en el botón al pasar el cursor */
 button:hover {
-    background-color: rgb(223, 165, 90);
-    color: white /* Texto en color oscuro */
+    background-color: #6868dc;
+    color: white;
 }
 
 .cont-buttons{
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    padding: 0; /* Elimina el auto en padding */
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
 mat-select{

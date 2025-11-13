@@ -10,6 +10,14 @@
     padding: 0px;
     background-color: rgb(255, 255, 255);
 }
+.tittle {
+    font-size: 25px;
+    color: #6c63ff;
+    font-family: "Momo Trust Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
 
 .container {
     display: flex;
@@ -55,12 +63,12 @@ form{
 }
 .button {
     background-color: rgb(255, 255, 255);
-    color: rgb(43, 41, 41);
+    color: #8f8fe9;
     border: 2px solid beige;
     padding: 7px 14px;
     font-size: 18px;
     border-radius: 5px;
-    border-color: rgb(223, 165, 90);
+    border-color: #8f8fe9;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     margin-left: 20px;
@@ -69,14 +77,10 @@ form{
 }
 
 .button:hover {
-    background-color: rgb(223, 165, 90);
+    background-color: #8f8fe9;
     color: white
 }
 
-.button_2:hover {
-    background-color: rgb(223, 165, 90);
-    color: white
-}
 
 @keyframes fadeIn {
     from {
@@ -118,12 +122,12 @@ p {
 
 .button_habit {
     background-color: rgb(255, 255, 255);
-    color: rgb(43, 41, 41);
+    color: #5050ba;
     border: 2px solid beige;
     padding: 7px 14px;
     font-size: 18px;
     border-radius: 5px;
-    border-color: rgb(223, 165, 90);
+    border-color: #7171d4;;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     margin: 18px;
@@ -132,6 +136,6 @@ p {
 }
 
 .button_habit:hover {
-    background-color: rgb(223, 165, 90);
+    background-color: #7171d4;
     color: white;
 }

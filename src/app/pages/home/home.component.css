@@ -95,7 +95,7 @@ button.activo i {
 }
 
 /* === Footer (botón cerrar sesión) === */
-.content-nav-body > button:last-child {
+.content-nav-body, .content > button:last-child {
   margin-top: auto;
   background: transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -120,7 +120,7 @@ button.activo i {
 
 /* Footer */
 footer {
-  background-color: #242424;
+  background-color: #1a1a2e;
   color: #fff;
   text-align: center;
   padding: 10px 0;
